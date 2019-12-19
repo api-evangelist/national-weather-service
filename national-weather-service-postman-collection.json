@@ -1,0 +1,12 @@
+{
+    "id": "bff80763fc60c68253acbb736a5f48ef",
+    "name": "National Weather Service",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": []
+}
