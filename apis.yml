@@ -27,7 +27,6 @@ apis:
     properties:
       - type: Documentation
         url: https://www.weather.gov/documentation/services-web-api
-    overlays: []
     aid: national-weather-service:national-weather-service-api
 common:
   - type: Property
