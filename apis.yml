@@ -13,14 +13,14 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 tags:
   - Federal Government
-  - Weather
   - Forecasting
+  - Weather
 apis:
   - aid: national-weather-service:national-weather-service-api
     name: National Weather Service API
     tags:
-      - Weather
       - Forecasting
+      - Weather
     humanURL: https://www.weather.gov/documentation/services-web-api
     baseURL: https://api.weather.gov/
     properties:
