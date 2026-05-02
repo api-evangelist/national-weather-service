@@ -9,7 +9,7 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/national-weather-service/refs/heads/main/apis.yml
 created: '2024-01-01'
-modified: '2026-03-16'
+modified: '2026-04-28'
 specificationVersion: '0.19'
 tags:
   - Federal Government
@@ -26,6 +26,10 @@ apis:
     properties:
       - url: https://www.weather.gov/documentation/services-web-api
         type: Documentation
+      - url: https://api.weather.gov/openapi.json
+        type: OpenAPI
+      - url: openapi/national-weather-service-openapi.json
+        type: OpenAPI
     description: >-
       The National Weather Service API allows developers access to critical
       forecasts, alerts, and observations, along with other weather data. The
