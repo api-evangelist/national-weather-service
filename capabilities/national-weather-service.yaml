@@ -1,0 +1,2493 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: weather.gov API
+  description: 'weather.gov API. 65 operations. Lead operation: weather.gov API. Self-contained Naftiko capability covering
+    one National Weather Service business surface.'
+  tags:
+  - National Weather Service
+  - weather.gov API
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    NATIONAL_WEATHER_SERVICE_API_KEY: NATIONAL_WEATHER_SERVICE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: national-weather-service
+    baseUri: https://api.weather.gov
+    description: weather.gov API business capability. Self-contained, no shared references.
+    resources:
+    - name: alerts
+      path: /alerts
+      operations:
+      - name: alertsquery
+        method: GET
+        description: Returns all alerts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: active
+          in: query
+          type: boolean
+          description: List only active alerts (use /alerts/active endpoints instead)
+    - name: alerts-active
+      path: /alerts/active
+      operations:
+      - name: alertsactive
+        method: GET
+        description: Returns all currently active alerts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: alerts-active-area-area
+      path: /alerts/active/area/{area}
+      operations:
+      - name: alertsactivearea
+        method: GET
+        description: Returns active alerts for the given area (state or marine area)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: alerts-active-count
+      path: /alerts/active/count
+      operations:
+      - name: alertsactivecount
+        method: GET
+        description: Returns info on the number of active alerts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: alerts-active-region-region
+      path: /alerts/active/region/{region}
+      operations:
+      - name: alertsactiveregion
+        method: GET
+        description: Returns active alerts for the given marine region
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: alerts-active-zone-zoneId
+      path: /alerts/active/zone/{zoneId}
+      operations:
+      - name: alertsactivezone
+        method: GET
+        description: Returns active alerts for the given NWS public zone or county
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: alerts-types
+      path: /alerts/types
+      operations:
+      - name: alertstypes
+        method: GET
+        description: Returns a list of alert types
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: alerts-id
+      path: /alerts/{id}
+      operations:
+      - name: alertssingle
+        method: GET
+        description: Returns a specific alert
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: aviation-cwsus-cwsuId
+      path: /aviation/cwsus/{cwsuId}
+      operations:
+      - name: cwsu
+        method: GET
+        description: Returns metadata about a Center Weather Service Unit
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: aviation-cwsus-cwsuId-cwas
+      path: /aviation/cwsus/{cwsuId}/cwas
+      operations:
+      - name: cwas
+        method: GET
+        description: Returns a list of Center Weather Advisories from a CWSU
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: aviation-cwsus-cwsuId-cwas-date-sequence
+      path: /aviation/cwsus/{cwsuId}/cwas/{date}/{sequence}
+      operations:
+      - name: cwa
+        method: GET
+        description: Returns a list of Center Weather Advisories from a CWSU
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sequence
+          in: path
+          type: integer
+          description: Sequence number
+          required: true
+    - name: aviation-sigmets
+      path: /aviation/sigmets
+      operations:
+      - name: sigmetquery
+        method: GET
+        description: Returns a list of SIGMET/AIRMETs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: atsu
+          in: query
+          type: string
+          description: ATSU identifier
+        - name: sequence
+          in: query
+          type: string
+          description: SIGMET sequence number
+    - name: aviation-sigmets-atsu
+      path: /aviation/sigmets/{atsu}
+      operations:
+      - name: sigmetsbyatsu
+        method: GET
+        description: Returns a list of SIGMET/AIRMETs for the specified ATSU
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: aviation-sigmets-atsu-date
+      path: /aviation/sigmets/{atsu}/{date}
+      operations:
+      - name: sigmetsbyatsubydate
+        method: GET
+        description: Returns a list of SIGMET/AIRMETs for the specified ATSU for the specified date
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: aviation-sigmets-atsu-date-time
+      path: /aviation/sigmets/{atsu}/{date}/{time}
+      operations:
+      - name: sigmet
+        method: GET
+        description: Returns a specific SIGMET/AIRMET
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: glossary
+      path: /glossary
+      operations:
+      - name: glossary
+        method: GET
+        description: Returns glossary terms
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: gridpoints-wfo-x},{y
+      path: /gridpoints/{wfo}/{x},{y}
+      operations:
+      - name: gridpoint
+        method: GET
+        description: Returns raw numerical forecast data for a 2.5km grid area
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: gridpoints-wfo-x},{y-forecast
+      path: /gridpoints/{wfo}/{x},{y}/forecast
+      operations:
+      - name: gridpointforecast
+        method: GET
+        description: Returns a textual forecast for a 2.5km grid area
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: gridpoints-wfo-x},{y-forecast-hourly
+      path: /gridpoints/{wfo}/{x},{y}/forecast/hourly
+      operations:
+      - name: gridpointforecasthourly
+        method: GET
+        description: Returns a textual hourly forecast for a 2.5km grid area
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: gridpoints-wfo-x},{y-stations
+      path: /gridpoints/{wfo}/{x},{y}/stations
+      operations:
+      - name: gridpointstations
+        method: GET
+        description: Returns a list of observation stations usable for a given 2.5km grid area
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: icons
+      path: /icons
+      operations:
+      - name: iconssummary
+        method: GET
+        description: Returns a list of icon codes and textual descriptions. Icon services in API are deprecated.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: icons-set-timeOfDay-first
+      path: /icons/{set}/{timeOfDay}/{first}
+      operations:
+      - name: icons
+        method: GET
+        description: Returns a forecast icon. Icon services in API are deprecated.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: icons-set-timeOfDay-first-second
+      path: /icons/{set}/{timeOfDay}/{first}/{second}
+      operations:
+      - name: iconsdualcondition
+        method: GET
+        description: Returns a forecast icon. Icon services in API are deprecated.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: offices-officeId
+      path: /offices/{officeId}
+      operations:
+      - name: office
+        method: GET
+        description: Returns metadata about a NWS forecast office
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: offices-officeId-briefing
+      path: /offices/{officeId}/briefing
+      operations:
+      - name: officebriefing
+        method: GET
+        description: Returns active briefing for an NWS office
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: offices-officeId-briefing-download-latest
+      path: /offices/{officeId}/briefing/download/latest
+      operations:
+      - name: officebriefingdownloadlatest
+        method: GET
+        description: Returns the latest briefing for an office
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: offices-officeId-briefing-download-briefingId
+      path: /offices/{officeId}/briefing/download/{briefingId}
+      operations:
+      - name: officebriefingdownload
+        method: GET
+        description: Returns a briefing for an office
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: offices-officeId-headlines
+      path: /offices/{officeId}/headlines
+      operations:
+      - name: officeheadlines
+        method: GET
+        description: Returns a list of news headlines for a given NWS office
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: offices-officeId-headlines-headlineId
+      path: /offices/{officeId}/headlines/{headlineId}
+      operations:
+      - name: officeheadline
+        method: GET
+        description: Returns a specific news headline for a given NWS office
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: offices-officeId-weatherstories
+      path: /offices/{officeId}/weatherstories
+      operations:
+      - name: officeweatherstory
+        method: GET
+        description: Returns active weather stories for an NWS office
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: offices-officeId-weatherstories-download-imageId
+      path: /offices/{officeId}/weatherstories/download/{imageId}
+      operations:
+      - name: officeweatherstoryimage
+        method: GET
+        description: Returns the image for a weather story
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: points-latitude},{longitude
+      path: /points/{latitude},{longitude}
+      operations:
+      - name: point
+        method: GET
+        description: Returns metadata about a given latitude/longitude point
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: points-latitude},{longitude-radio
+      path: /points/{latitude},{longitude}/radio
+      operations:
+      - name: pointradio
+        method: GET
+        description: Returns NOAA Weather Radio broadcast script for a latitude/longitude point
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: points-latitude},{longitude-stations
+      path: /points/{latitude},{longitude}/stations
+      operations:
+      - name: pointstations
+        method: GET
+        description: Returns a list of observation stations for a given point
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: products
+      path: /products
+      operations:
+      - name: productsquery
+        method: GET
+        description: Returns a list of text products
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: location
+          in: query
+          type: array
+          description: Location id
+        - name: start
+          in: query
+          type: string
+          description: Start time
+        - name: end
+          in: query
+          type: string
+          description: End time
+        - name: office
+          in: query
+          type: array
+          description: Issuing office
+        - name: wmoid
+          in: query
+          type: array
+          description: WMO id code
+        - name: type
+          in: query
+          type: array
+          description: Product code
+        - name: limit
+          in: query
+          type: integer
+          description: Limit
+    - name: products-locations
+      path: /products/locations
+      operations:
+      - name: productlocations
+        method: GET
+        description: Returns a list of valid text product issuance locations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: products-locations-locationId-types
+      path: /products/locations/{locationId}/types
+      operations:
+      - name: locationproducts
+        method: GET
+        description: Returns a list of valid text product types for a given issuance location
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: products-types
+      path: /products/types
+      operations:
+      - name: producttypes
+        method: GET
+        description: Returns a list of valid text product types and codes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: products-types-typeId
+      path: /products/types/{typeId}
+      operations:
+      - name: productstype
+        method: GET
+        description: Returns a list of text products of a given type
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: products-types-typeId-locations
+      path: /products/types/{typeId}/locations
+      operations:
+      - name: productstypelocations
+        method: GET
+        description: Returns a list of valid text product issuance locations for a given product type
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: products-types-typeId-locations-locationId
+      path: /products/types/{typeId}/locations/{locationId}
+      operations:
+      - name: productstypelocation
+        method: GET
+        description: Returns a list of text products of a given type for a given issuance location
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: products-types-typeId-locations-locationId-latest
+      path: /products/types/{typeId}/locations/{locationId}/latest
+      operations:
+      - name: latestproducttypelocation
+        method: GET
+        description: Returns latest text products of a given type for a given issuance location with product text
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: products-productId
+      path: /products/{productId}
+      operations:
+      - name: product
+        method: GET
+        description: Returns a specific text product
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: radar-profilers-stationId
+      path: /radar/profilers/{stationId}
+      operations:
+      - name: radarprofiler
+        method: GET
+        description: Returns metadata about a given radar wind profiler
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: time
+          in: query
+          type: string
+          description: Time interval
+        - name: interval
+          in: query
+          type: string
+          description: Averaging interval
+    - name: radar-queues-host
+      path: /radar/queues/{host}
+      operations:
+      - name: radarqueue
+        method: GET
+        description: Returns metadata about a given radar queue
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+          description: Record limit
+        - name: arrived
+          in: query
+          type: string
+          description: Range for arrival time
+        - name: created
+          in: query
+          type: string
+          description: Range for creation time
+        - name: published
+          in: query
+          type: string
+          description: Range for publish time
+        - name: station
+          in: query
+          type: string
+          description: Station identifier
+        - name: type
+          in: query
+          type: string
+          description: Record type
+        - name: feed
+          in: query
+          type: string
+          description: Originating product feed
+        - name: resolution
+          in: query
+          type: integer
+          description: Resolution version
+    - name: radar-servers
+      path: /radar/servers
+      operations:
+      - name: radarservers
+        method: GET
+        description: Returns a list of radar servers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: reportingHost
+          in: query
+          type: string
+          description: Show records from specific reporting host
+    - name: radar-servers-id
+      path: /radar/servers/{id}
+      operations:
+      - name: radarserver
+        method: GET
+        description: Returns metadata about a given radar server
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: reportingHost
+          in: query
+          type: string
+          description: Show records from specific reporting host
+    - name: radar-stations
+      path: /radar/stations
+      operations:
+      - name: radarstations
+        method: GET
+        description: Returns a list of radar stations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: stationType
+          in: query
+          type: array
+          description: Limit results to a specific station type or types
+        - name: reportingHost
+          in: query
+          type: string
+          description: Show RDA and latency info from specific reporting host
+        - name: host
+          in: query
+          type: string
+          description: Show latency info from specific LDM host
+    - name: radar-stations-stationId
+      path: /radar/stations/{stationId}
+      operations:
+      - name: radarstation
+        method: GET
+        description: Returns metadata about a given radar station
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: reportingHost
+          in: query
+          type: string
+          description: Show RDA and latency info from specific reporting host
+        - name: host
+          in: query
+          type: string
+          description: Show latency info from specific LDM host
+    - name: radar-stations-stationId-alarms
+      path: /radar/stations/{stationId}/alarms
+      operations:
+      - name: radarstationalarms
+        method: GET
+        description: Returns metadata about a given radar station alarms
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: radio-callSign-broadcast
+      path: /radio/{callSign}/broadcast
+      operations:
+      - name: arearadio
+        method: GET
+        description: Returns NOAA Weather Radio broadcast script for a transmitter
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: stations
+      path: /stations
+      operations:
+      - name: obsstations
+        method: GET
+        description: Returns a list of observation stations.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: query
+          type: array
+          description: Filter by observation station ID
+        - name: state
+          in: query
+          type: array
+          description: Filter by state/marine area code
+    - name: stations-stationId
+      path: /stations/{stationId}
+      operations:
+      - name: obsstation
+        method: GET
+        description: Returns metadata about a given observation station
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: stations-stationId-observations
+      path: /stations/{stationId}/observations
+      operations:
+      - name: stationobservationlist
+        method: GET
+        description: Returns a list of observations for a given station
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+          description: Limit
+    - name: stations-stationId-observations-latest
+      path: /stations/{stationId}/observations/latest
+      operations:
+      - name: stationobservationlatest
+        method: GET
+        description: Returns the latest observation for a station
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: require_qc
+          in: query
+          type: boolean
+          description: Require QC
+    - name: stations-stationId-observations-time
+      path: /stations/{stationId}/observations/{time}
+      operations:
+      - name: stationobservationtime
+        method: GET
+        description: Returns a single observation.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: time
+          in: path
+          type: string
+          description: Timestamp of requested observation
+          required: true
+    - name: stations-stationId-tafs
+      path: /stations/{stationId}/tafs
+      operations:
+      - name: tafs
+        method: GET
+        description: Returns Terminal Aerodrome Forecasts for the specified airport station.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: stations-stationId-tafs-date-time
+      path: /stations/{stationId}/tafs/{date}/{time}
+      operations:
+      - name: taf
+        method: GET
+        description: Returns a single Terminal Aerodrome Forecast.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: thumbnails-satellite-area
+      path: /thumbnails/satellite/{area}
+      operations:
+      - name: satellitethumbnails
+        method: GET
+        description: Returns a thumbnail image for a satellite region. Image services in API are deprecated.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: zones
+      path: /zones
+      operations:
+      - name: zonelist
+        method: GET
+        description: Returns a list of zones
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: query
+          type: array
+          description: Zone ID (forecast or county)
+        - name: area
+          in: query
+          type: array
+          description: State/marine area code
+        - name: region
+          in: query
+          type: array
+          description: Region code
+        - name: type
+          in: query
+          type: array
+          description: Zone type
+        - name: point
+          in: query
+          type: string
+          description: Point (latitude,longitude)
+        - name: include_geometry
+          in: query
+          type: boolean
+          description: Include geometry in results (true/false)
+        - name: limit
+          in: query
+          type: integer
+          description: Limit
+        - name: effective
+          in: query
+          type: string
+          description: Effective date/time
+    - name: zones-forecast-zoneId-observations
+      path: /zones/forecast/{zoneId}/observations
+      operations:
+      - name: zoneobs
+        method: GET
+        description: Returns a list of observations for a given zone
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: start
+          in: query
+          type: string
+          description: Start date/time
+        - name: end
+          in: query
+          type: string
+          description: End date/time
+        - name: limit
+          in: query
+          type: integer
+          description: Limit
+    - name: zones-forecast-zoneId-stations
+      path: /zones/forecast/{zoneId}/stations
+      operations:
+      - name: zonestations
+        method: GET
+        description: Returns a list of observation stations for a given zone
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: zones-type
+      path: /zones/{type}
+      operations:
+      - name: zonelisttype
+        method: GET
+        description: Returns a list of zones of a given type
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: query
+          type: array
+          description: Zone ID (forecast or county)
+        - name: area
+          in: query
+          type: array
+          description: State/marine area code
+        - name: region
+          in: query
+          type: array
+          description: Region code
+        - name: type
+          in: query
+          type: array
+          description: Zone type
+        - name: point
+          in: query
+          type: string
+          description: Point (latitude,longitude)
+        - name: include_geometry
+          in: query
+          type: boolean
+          description: Include geometry in results (true/false)
+        - name: limit
+          in: query
+          type: integer
+          description: Limit
+        - name: effective
+          in: query
+          type: string
+          description: Effective date/time
+    - name: zones-type-zoneId
+      path: /zones/{type}/{zoneId}
+      operations:
+      - name: zone
+        method: GET
+        description: Returns metadata about a given zone
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: effective
+          in: query
+          type: string
+          description: Effective date/time
+    - name: zones-type-zoneId-forecast
+      path: /zones/{type}/{zoneId}/forecast
+      operations:
+      - name: zoneforecast
+        method: GET
+        description: Returns the current zone forecast for a given zone
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: User-Agent
+      value: '{{env.NATIONAL_WEATHER_SERVICE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: national-weather-service-rest
+    port: 8080
+    description: REST adapter for weather.gov API. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/alerts
+      name: alerts
+      description: REST surface for alerts.
+      operations:
+      - method: GET
+        name: alertsquery
+        description: Returns all alerts
+        call: national-weather-service.alertsquery
+        with:
+          active: rest.active
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/alerts/active
+      name: alerts-active
+      description: REST surface for alerts-active.
+      operations:
+      - method: GET
+        name: alertsactive
+        description: Returns all currently active alerts
+        call: national-weather-service.alertsactive
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/alerts/active/area/{area}
+      name: alerts-active-area-area
+      description: REST surface for alerts-active-area-area.
+      operations:
+      - method: GET
+        name: alertsactivearea
+        description: Returns active alerts for the given area (state or marine area)
+        call: national-weather-service.alertsactivearea
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/alerts/active/count
+      name: alerts-active-count
+      description: REST surface for alerts-active-count.
+      operations:
+      - method: GET
+        name: alertsactivecount
+        description: Returns info on the number of active alerts
+        call: national-weather-service.alertsactivecount
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/alerts/active/region/{region}
+      name: alerts-active-region-region
+      description: REST surface for alerts-active-region-region.
+      operations:
+      - method: GET
+        name: alertsactiveregion
+        description: Returns active alerts for the given marine region
+        call: national-weather-service.alertsactiveregion
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/alerts/active/zone/{zoneid}
+      name: alerts-active-zone-zoneid
+      description: REST surface for alerts-active-zone-zoneId.
+      operations:
+      - method: GET
+        name: alertsactivezone
+        description: Returns active alerts for the given NWS public zone or county
+        call: national-weather-service.alertsactivezone
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/alerts/types
+      name: alerts-types
+      description: REST surface for alerts-types.
+      operations:
+      - method: GET
+        name: alertstypes
+        description: Returns a list of alert types
+        call: national-weather-service.alertstypes
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/alerts/{id}
+      name: alerts-id
+      description: REST surface for alerts-id.
+      operations:
+      - method: GET
+        name: alertssingle
+        description: Returns a specific alert
+        call: national-weather-service.alertssingle
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/aviation/cwsus/{cwsuid}
+      name: aviation-cwsus-cwsuid
+      description: REST surface for aviation-cwsus-cwsuId.
+      operations:
+      - method: GET
+        name: cwsu
+        description: Returns metadata about a Center Weather Service Unit
+        call: national-weather-service.cwsu
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/aviation/cwsus/{cwsuid}/cwas
+      name: aviation-cwsus-cwsuid-cwas
+      description: REST surface for aviation-cwsus-cwsuId-cwas.
+      operations:
+      - method: GET
+        name: cwas
+        description: Returns a list of Center Weather Advisories from a CWSU
+        call: national-weather-service.cwas
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/aviation/cwsus/{cwsuid}/cwas/{date}/{sequence}
+      name: aviation-cwsus-cwsuid-cwas-date-sequence
+      description: REST surface for aviation-cwsus-cwsuId-cwas-date-sequence.
+      operations:
+      - method: GET
+        name: cwa
+        description: Returns a list of Center Weather Advisories from a CWSU
+        call: national-weather-service.cwa
+        with:
+          sequence: rest.sequence
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/aviation/sigmets
+      name: aviation-sigmets
+      description: REST surface for aviation-sigmets.
+      operations:
+      - method: GET
+        name: sigmetquery
+        description: Returns a list of SIGMET/AIRMETs
+        call: national-weather-service.sigmetquery
+        with:
+          atsu: rest.atsu
+          sequence: rest.sequence
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/aviation/sigmets/{atsu}
+      name: aviation-sigmets-atsu
+      description: REST surface for aviation-sigmets-atsu.
+      operations:
+      - method: GET
+        name: sigmetsbyatsu
+        description: Returns a list of SIGMET/AIRMETs for the specified ATSU
+        call: national-weather-service.sigmetsbyatsu
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/aviation/sigmets/{atsu}/{date}
+      name: aviation-sigmets-atsu-date
+      description: REST surface for aviation-sigmets-atsu-date.
+      operations:
+      - method: GET
+        name: sigmetsbyatsubydate
+        description: Returns a list of SIGMET/AIRMETs for the specified ATSU for the specified date
+        call: national-weather-service.sigmetsbyatsubydate
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/aviation/sigmets/{atsu}/{date}/{time}
+      name: aviation-sigmets-atsu-date-time
+      description: REST surface for aviation-sigmets-atsu-date-time.
+      operations:
+      - method: GET
+        name: sigmet
+        description: Returns a specific SIGMET/AIRMET
+        call: national-weather-service.sigmet
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/glossary
+      name: glossary
+      description: REST surface for glossary.
+      operations:
+      - method: GET
+        name: glossary
+        description: Returns glossary terms
+        call: national-weather-service.glossary
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/gridpoints/{wfo}/{x-y}
+      name: gridpoints-wfo-x-y
+      description: REST surface for gridpoints-wfo-x},{y.
+      operations:
+      - method: GET
+        name: gridpoint
+        description: Returns raw numerical forecast data for a 2.5km grid area
+        call: national-weather-service.gridpoint
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/gridpoints/{wfo}/{x-y}/forecast
+      name: gridpoints-wfo-x-y-forecast
+      description: REST surface for gridpoints-wfo-x},{y-forecast.
+      operations:
+      - method: GET
+        name: gridpointforecast
+        description: Returns a textual forecast for a 2.5km grid area
+        call: national-weather-service.gridpointforecast
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/gridpoints/{wfo}/{x-y}/forecast/hourly
+      name: gridpoints-wfo-x-y-forecast-hourly
+      description: REST surface for gridpoints-wfo-x},{y-forecast-hourly.
+      operations:
+      - method: GET
+        name: gridpointforecasthourly
+        description: Returns a textual hourly forecast for a 2.5km grid area
+        call: national-weather-service.gridpointforecasthourly
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/gridpoints/{wfo}/{x-y}/stations
+      name: gridpoints-wfo-x-y-stations
+      description: REST surface for gridpoints-wfo-x},{y-stations.
+      operations:
+      - method: GET
+        name: gridpointstations
+        description: Returns a list of observation stations usable for a given 2.5km grid area
+        call: national-weather-service.gridpointstations
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/icons
+      name: icons
+      description: REST surface for icons.
+      operations:
+      - method: GET
+        name: iconssummary
+        description: Returns a list of icon codes and textual descriptions. Icon services in API are deprecated.
+        call: national-weather-service.iconssummary
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/icons/{set}/{timeofday}/{first}
+      name: icons-set-timeofday-first
+      description: REST surface for icons-set-timeOfDay-first.
+      operations:
+      - method: GET
+        name: icons
+        description: Returns a forecast icon. Icon services in API are deprecated.
+        call: national-weather-service.icons
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/icons/{set}/{timeofday}/{first}/{second}
+      name: icons-set-timeofday-first-second
+      description: REST surface for icons-set-timeOfDay-first-second.
+      operations:
+      - method: GET
+        name: iconsdualcondition
+        description: Returns a forecast icon. Icon services in API are deprecated.
+        call: national-weather-service.iconsdualcondition
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/offices/{officeid}
+      name: offices-officeid
+      description: REST surface for offices-officeId.
+      operations:
+      - method: GET
+        name: office
+        description: Returns metadata about a NWS forecast office
+        call: national-weather-service.office
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/offices/{officeid}/briefing
+      name: offices-officeid-briefing
+      description: REST surface for offices-officeId-briefing.
+      operations:
+      - method: GET
+        name: officebriefing
+        description: Returns active briefing for an NWS office
+        call: national-weather-service.officebriefing
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/offices/{officeid}/briefing/download/latest
+      name: offices-officeid-briefing-download-latest
+      description: REST surface for offices-officeId-briefing-download-latest.
+      operations:
+      - method: GET
+        name: officebriefingdownloadlatest
+        description: Returns the latest briefing for an office
+        call: national-weather-service.officebriefingdownloadlatest
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/offices/{officeid}/briefing/download/{briefingid}
+      name: offices-officeid-briefing-download-briefingid
+      description: REST surface for offices-officeId-briefing-download-briefingId.
+      operations:
+      - method: GET
+        name: officebriefingdownload
+        description: Returns a briefing for an office
+        call: national-weather-service.officebriefingdownload
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/offices/{officeid}/headlines
+      name: offices-officeid-headlines
+      description: REST surface for offices-officeId-headlines.
+      operations:
+      - method: GET
+        name: officeheadlines
+        description: Returns a list of news headlines for a given NWS office
+        call: national-weather-service.officeheadlines
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/offices/{officeid}/headlines/{headlineid}
+      name: offices-officeid-headlines-headlineid
+      description: REST surface for offices-officeId-headlines-headlineId.
+      operations:
+      - method: GET
+        name: officeheadline
+        description: Returns a specific news headline for a given NWS office
+        call: national-weather-service.officeheadline
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/offices/{officeid}/weatherstories
+      name: offices-officeid-weatherstories
+      description: REST surface for offices-officeId-weatherstories.
+      operations:
+      - method: GET
+        name: officeweatherstory
+        description: Returns active weather stories for an NWS office
+        call: national-weather-service.officeweatherstory
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/offices/{officeid}/weatherstories/download/{imageid}
+      name: offices-officeid-weatherstories-download-imageid
+      description: REST surface for offices-officeId-weatherstories-download-imageId.
+      operations:
+      - method: GET
+        name: officeweatherstoryimage
+        description: Returns the image for a weather story
+        call: national-weather-service.officeweatherstoryimage
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/points/{latitude-longitude}
+      name: points-latitude-longitude
+      description: REST surface for points-latitude},{longitude.
+      operations:
+      - method: GET
+        name: point
+        description: Returns metadata about a given latitude/longitude point
+        call: national-weather-service.point
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/points/{latitude-longitude}/radio
+      name: points-latitude-longitude-radio
+      description: REST surface for points-latitude},{longitude-radio.
+      operations:
+      - method: GET
+        name: pointradio
+        description: Returns NOAA Weather Radio broadcast script for a latitude/longitude point
+        call: national-weather-service.pointradio
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/points/{latitude-longitude}/stations
+      name: points-latitude-longitude-stations
+      description: REST surface for points-latitude},{longitude-stations.
+      operations:
+      - method: GET
+        name: pointstations
+        description: Returns a list of observation stations for a given point
+        call: national-weather-service.pointstations
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/products
+      name: products
+      description: REST surface for products.
+      operations:
+      - method: GET
+        name: productsquery
+        description: Returns a list of text products
+        call: national-weather-service.productsquery
+        with:
+          location: rest.location
+          start: rest.start
+          end: rest.end
+          office: rest.office
+          wmoid: rest.wmoid
+          type: rest.type
+          limit: rest.limit
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/products/locations
+      name: products-locations
+      description: REST surface for products-locations.
+      operations:
+      - method: GET
+        name: productlocations
+        description: Returns a list of valid text product issuance locations
+        call: national-weather-service.productlocations
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/products/locations/{locationid}/types
+      name: products-locations-locationid-types
+      description: REST surface for products-locations-locationId-types.
+      operations:
+      - method: GET
+        name: locationproducts
+        description: Returns a list of valid text product types for a given issuance location
+        call: national-weather-service.locationproducts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/products/types
+      name: products-types
+      description: REST surface for products-types.
+      operations:
+      - method: GET
+        name: producttypes
+        description: Returns a list of valid text product types and codes
+        call: national-weather-service.producttypes
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/products/types/{typeid}
+      name: products-types-typeid
+      description: REST surface for products-types-typeId.
+      operations:
+      - method: GET
+        name: productstype
+        description: Returns a list of text products of a given type
+        call: national-weather-service.productstype
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/products/types/{typeid}/locations
+      name: products-types-typeid-locations
+      description: REST surface for products-types-typeId-locations.
+      operations:
+      - method: GET
+        name: productstypelocations
+        description: Returns a list of valid text product issuance locations for a given product type
+        call: national-weather-service.productstypelocations
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/products/types/{typeid}/locations/{locationid}
+      name: products-types-typeid-locations-locationid
+      description: REST surface for products-types-typeId-locations-locationId.
+      operations:
+      - method: GET
+        name: productstypelocation
+        description: Returns a list of text products of a given type for a given issuance location
+        call: national-weather-service.productstypelocation
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/products/types/{typeid}/locations/{locationid}/latest
+      name: products-types-typeid-locations-locationid-latest
+      description: REST surface for products-types-typeId-locations-locationId-latest.
+      operations:
+      - method: GET
+        name: latestproducttypelocation
+        description: Returns latest text products of a given type for a given issuance location with product text
+        call: national-weather-service.latestproducttypelocation
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/products/{productid}
+      name: products-productid
+      description: REST surface for products-productId.
+      operations:
+      - method: GET
+        name: product
+        description: Returns a specific text product
+        call: national-weather-service.product
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/radar/profilers/{stationid}
+      name: radar-profilers-stationid
+      description: REST surface for radar-profilers-stationId.
+      operations:
+      - method: GET
+        name: radarprofiler
+        description: Returns metadata about a given radar wind profiler
+        call: national-weather-service.radarprofiler
+        with:
+          time: rest.time
+          interval: rest.interval
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/radar/queues/{host}
+      name: radar-queues-host
+      description: REST surface for radar-queues-host.
+      operations:
+      - method: GET
+        name: radarqueue
+        description: Returns metadata about a given radar queue
+        call: national-weather-service.radarqueue
+        with:
+          limit: rest.limit
+          arrived: rest.arrived
+          created: rest.created
+          published: rest.published
+          station: rest.station
+          type: rest.type
+          feed: rest.feed
+          resolution: rest.resolution
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/radar/servers
+      name: radar-servers
+      description: REST surface for radar-servers.
+      operations:
+      - method: GET
+        name: radarservers
+        description: Returns a list of radar servers
+        call: national-weather-service.radarservers
+        with:
+          reportingHost: rest.reportingHost
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/radar/servers/{id}
+      name: radar-servers-id
+      description: REST surface for radar-servers-id.
+      operations:
+      - method: GET
+        name: radarserver
+        description: Returns metadata about a given radar server
+        call: national-weather-service.radarserver
+        with:
+          reportingHost: rest.reportingHost
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/radar/stations
+      name: radar-stations
+      description: REST surface for radar-stations.
+      operations:
+      - method: GET
+        name: radarstations
+        description: Returns a list of radar stations
+        call: national-weather-service.radarstations
+        with:
+          stationType: rest.stationType
+          reportingHost: rest.reportingHost
+          host: rest.host
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/radar/stations/{stationid}
+      name: radar-stations-stationid
+      description: REST surface for radar-stations-stationId.
+      operations:
+      - method: GET
+        name: radarstation
+        description: Returns metadata about a given radar station
+        call: national-weather-service.radarstation
+        with:
+          reportingHost: rest.reportingHost
+          host: rest.host
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/radar/stations/{stationid}/alarms
+      name: radar-stations-stationid-alarms
+      description: REST surface for radar-stations-stationId-alarms.
+      operations:
+      - method: GET
+        name: radarstationalarms
+        description: Returns metadata about a given radar station alarms
+        call: national-weather-service.radarstationalarms
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/radio/{callsign}/broadcast
+      name: radio-callsign-broadcast
+      description: REST surface for radio-callSign-broadcast.
+      operations:
+      - method: GET
+        name: arearadio
+        description: Returns NOAA Weather Radio broadcast script for a transmitter
+        call: national-weather-service.arearadio
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/stations
+      name: stations
+      description: REST surface for stations.
+      operations:
+      - method: GET
+        name: obsstations
+        description: Returns a list of observation stations.
+        call: national-weather-service.obsstations
+        with:
+          id: rest.id
+          state: rest.state
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/stations/{stationid}
+      name: stations-stationid
+      description: REST surface for stations-stationId.
+      operations:
+      - method: GET
+        name: obsstation
+        description: Returns metadata about a given observation station
+        call: national-weather-service.obsstation
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/stations/{stationid}/observations
+      name: stations-stationid-observations
+      description: REST surface for stations-stationId-observations.
+      operations:
+      - method: GET
+        name: stationobservationlist
+        description: Returns a list of observations for a given station
+        call: national-weather-service.stationobservationlist
+        with:
+          limit: rest.limit
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/stations/{stationid}/observations/latest
+      name: stations-stationid-observations-latest
+      description: REST surface for stations-stationId-observations-latest.
+      operations:
+      - method: GET
+        name: stationobservationlatest
+        description: Returns the latest observation for a station
+        call: national-weather-service.stationobservationlatest
+        with:
+          require_qc: rest.require_qc
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/stations/{stationid}/observations/{time}
+      name: stations-stationid-observations-time
+      description: REST surface for stations-stationId-observations-time.
+      operations:
+      - method: GET
+        name: stationobservationtime
+        description: Returns a single observation.
+        call: national-weather-service.stationobservationtime
+        with:
+          time: rest.time
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/stations/{stationid}/tafs
+      name: stations-stationid-tafs
+      description: REST surface for stations-stationId-tafs.
+      operations:
+      - method: GET
+        name: tafs
+        description: Returns Terminal Aerodrome Forecasts for the specified airport station.
+        call: national-weather-service.tafs
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/stations/{stationid}/tafs/{date}/{time}
+      name: stations-stationid-tafs-date-time
+      description: REST surface for stations-stationId-tafs-date-time.
+      operations:
+      - method: GET
+        name: taf
+        description: Returns a single Terminal Aerodrome Forecast.
+        call: national-weather-service.taf
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/thumbnails/satellite/{area}
+      name: thumbnails-satellite-area
+      description: REST surface for thumbnails-satellite-area.
+      operations:
+      - method: GET
+        name: satellitethumbnails
+        description: Returns a thumbnail image for a satellite region. Image services in API are deprecated.
+        call: national-weather-service.satellitethumbnails
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/zones
+      name: zones
+      description: REST surface for zones.
+      operations:
+      - method: GET
+        name: zonelist
+        description: Returns a list of zones
+        call: national-weather-service.zonelist
+        with:
+          id: rest.id
+          area: rest.area
+          region: rest.region
+          type: rest.type
+          point: rest.point
+          include_geometry: rest.include_geometry
+          limit: rest.limit
+          effective: rest.effective
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/zones/forecast/{zoneid}/observations
+      name: zones-forecast-zoneid-observations
+      description: REST surface for zones-forecast-zoneId-observations.
+      operations:
+      - method: GET
+        name: zoneobs
+        description: Returns a list of observations for a given zone
+        call: national-weather-service.zoneobs
+        with:
+          start: rest.start
+          end: rest.end
+          limit: rest.limit
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/zones/forecast/{zoneid}/stations
+      name: zones-forecast-zoneid-stations
+      description: REST surface for zones-forecast-zoneId-stations.
+      operations:
+      - method: GET
+        name: zonestations
+        description: Returns a list of observation stations for a given zone
+        call: national-weather-service.zonestations
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/zones/{type}
+      name: zones-type
+      description: REST surface for zones-type.
+      operations:
+      - method: GET
+        name: zonelisttype
+        description: Returns a list of zones of a given type
+        call: national-weather-service.zonelisttype
+        with:
+          id: rest.id
+          area: rest.area
+          region: rest.region
+          type: rest.type
+          point: rest.point
+          include_geometry: rest.include_geometry
+          limit: rest.limit
+          effective: rest.effective
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/zones/{type}/{zoneid}
+      name: zones-type-zoneid
+      description: REST surface for zones-type-zoneId.
+      operations:
+      - method: GET
+        name: zone
+        description: Returns metadata about a given zone
+        call: national-weather-service.zone
+        with:
+          effective: rest.effective
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/zones/{type}/{zoneid}/forecast
+      name: zones-type-zoneid-forecast
+      description: REST surface for zones-type-zoneId-forecast.
+      operations:
+      - method: GET
+        name: zoneforecast
+        description: Returns the current zone forecast for a given zone
+        call: national-weather-service.zoneforecast
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: national-weather-service-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for weather.gov API. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: returns-all-alerts
+      description: Returns all alerts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.alertsquery
+      with:
+        active: tools.active
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-all-currently-active-alerts
+      description: Returns all currently active alerts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.alertsactive
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-active-alerts-given-area
+      description: Returns active alerts for the given area (state or marine area)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.alertsactivearea
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-info-number-active-alerts
+      description: Returns info on the number of active alerts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.alertsactivecount
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-active-alerts-given-marine
+      description: Returns active alerts for the given marine region
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.alertsactiveregion
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-active-alerts-given-nws
+      description: Returns active alerts for the given NWS public zone or county
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.alertsactivezone
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-alert-types
+      description: Returns a list of alert types
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.alertstypes
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-specific-alert
+      description: Returns a specific alert
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.alertssingle
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-metadata-about-center-weather
+      description: Returns metadata about a Center Weather Service Unit
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.cwsu
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-center-weather-advisories
+      description: Returns a list of Center Weather Advisories from a CWSU
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.cwas
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-center-weather-advisories-2
+      description: Returns a list of Center Weather Advisories from a CWSU
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.cwa
+      with:
+        sequence: tools.sequence
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-sigmet-airmets
+      description: Returns a list of SIGMET/AIRMETs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.sigmetquery
+      with:
+        atsu: tools.atsu
+        sequence: tools.sequence
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-sigmet-airmets-specified
+      description: Returns a list of SIGMET/AIRMETs for the specified ATSU
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.sigmetsbyatsu
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-sigmet-airmets-specified-2
+      description: Returns a list of SIGMET/AIRMETs for the specified ATSU for the specified date
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.sigmetsbyatsubydate
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-specific-sigmet-airmet
+      description: Returns a specific SIGMET/AIRMET
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.sigmet
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-glossary-terms
+      description: Returns glossary terms
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.glossary
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-raw-numerical-forecast-data
+      description: Returns raw numerical forecast data for a 2.5km grid area
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.gridpoint
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-textual-forecast-2-5km-grid
+      description: Returns a textual forecast for a 2.5km grid area
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.gridpointforecast
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-textual-hourly-forecast-2-5km
+      description: Returns a textual hourly forecast for a 2.5km grid area
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.gridpointforecasthourly
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-observation-stations-usable
+      description: Returns a list of observation stations usable for a given 2.5km grid area
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.gridpointstations
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-icon-codes-and
+      description: Returns a list of icon codes and textual descriptions. Icon services in API are deprecated.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.iconssummary
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-forecast-icon-icon-services
+      description: Returns a forecast icon. Icon services in API are deprecated.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.icons
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-forecast-icon-icon-services-2
+      description: Returns a forecast icon. Icon services in API are deprecated.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.iconsdualcondition
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-metadata-about-nws-forecast
+      description: Returns metadata about a NWS forecast office
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.office
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-active-briefing-nws-office
+      description: Returns active briefing for an NWS office
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.officebriefing
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-latest-briefing-office
+      description: Returns the latest briefing for an office
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.officebriefingdownloadlatest
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-briefing-office
+      description: Returns a briefing for an office
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.officebriefingdownload
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-news-headlines-given
+      description: Returns a list of news headlines for a given NWS office
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.officeheadlines
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-specific-news-headline-given
+      description: Returns a specific news headline for a given NWS office
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.officeheadline
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-active-weather-stories-nws
+      description: Returns active weather stories for an NWS office
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.officeweatherstory
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-image-weather-story
+      description: Returns the image for a weather story
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.officeweatherstoryimage
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-metadata-about-given-latitude
+      description: Returns metadata about a given latitude/longitude point
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.point
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-noaa-weather-radio-broadcast
+      description: Returns NOAA Weather Radio broadcast script for a latitude/longitude point
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.pointradio
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-observation-stations-given
+      description: Returns a list of observation stations for a given point
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.pointstations
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-text-products
+      description: Returns a list of text products
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.productsquery
+      with:
+        location: tools.location
+        start: tools.start
+        end: tools.end
+        office: tools.office
+        wmoid: tools.wmoid
+        type: tools.type
+        limit: tools.limit
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-valid-text-product
+      description: Returns a list of valid text product issuance locations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.productlocations
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-valid-text-product-2
+      description: Returns a list of valid text product types for a given issuance location
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.locationproducts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-valid-text-product-3
+      description: Returns a list of valid text product types and codes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.producttypes
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-text-products-given
+      description: Returns a list of text products of a given type
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.productstype
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-valid-text-product-4
+      description: Returns a list of valid text product issuance locations for a given product type
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.productstypelocations
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-text-products-given-2
+      description: Returns a list of text products of a given type for a given issuance location
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.productstypelocation
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-latest-text-products-given
+      description: Returns latest text products of a given type for a given issuance location with product text
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.latestproducttypelocation
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-specific-text-product
+      description: Returns a specific text product
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.product
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-metadata-about-given-radar
+      description: Returns metadata about a given radar wind profiler
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.radarprofiler
+      with:
+        time: tools.time
+        interval: tools.interval
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-metadata-about-given-radar-2
+      description: Returns metadata about a given radar queue
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.radarqueue
+      with:
+        limit: tools.limit
+        arrived: tools.arrived
+        created: tools.created
+        published: tools.published
+        station: tools.station
+        type: tools.type
+        feed: tools.feed
+        resolution: tools.resolution
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-radar-servers
+      description: Returns a list of radar servers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.radarservers
+      with:
+        reportingHost: tools.reportingHost
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-metadata-about-given-radar-3
+      description: Returns metadata about a given radar server
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.radarserver
+      with:
+        reportingHost: tools.reportingHost
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-radar-stations
+      description: Returns a list of radar stations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.radarstations
+      with:
+        stationType: tools.stationType
+        reportingHost: tools.reportingHost
+        host: tools.host
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-metadata-about-given-radar-4
+      description: Returns metadata about a given radar station
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.radarstation
+      with:
+        reportingHost: tools.reportingHost
+        host: tools.host
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-metadata-about-given-radar-5
+      description: Returns metadata about a given radar station alarms
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.radarstationalarms
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-noaa-weather-radio-broadcast-2
+      description: Returns NOAA Weather Radio broadcast script for a transmitter
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.arearadio
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-observation-stations
+      description: Returns a list of observation stations.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.obsstations
+      with:
+        id: tools.id
+        state: tools.state
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-metadata-about-given-observation
+      description: Returns metadata about a given observation station
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.obsstation
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-observations-given-station
+      description: Returns a list of observations for a given station
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.stationobservationlist
+      with:
+        limit: tools.limit
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-latest-observation-station
+      description: Returns the latest observation for a station
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.stationobservationlatest
+      with:
+        require_qc: tools.require_qc
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-single-observation
+      description: Returns a single observation.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.stationobservationtime
+      with:
+        time: tools.time
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-terminal-aerodrome-forecasts-specified
+      description: Returns Terminal Aerodrome Forecasts for the specified airport station.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.tafs
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-single-terminal-aerodrome-forecast
+      description: Returns a single Terminal Aerodrome Forecast.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.taf
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-thumbnail-image-satellite-region
+      description: Returns a thumbnail image for a satellite region. Image services in API are deprecated.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.satellitethumbnails
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-zones
+      description: Returns a list of zones
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.zonelist
+      with:
+        id: tools.id
+        area: tools.area
+        region: tools.region
+        type: tools.type
+        point: tools.point
+        include_geometry: tools.include_geometry
+        limit: tools.limit
+        effective: tools.effective
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-observations-given-zone
+      description: Returns a list of observations for a given zone
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.zoneobs
+      with:
+        start: tools.start
+        end: tools.end
+        limit: tools.limit
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-observation-stations-given-2
+      description: Returns a list of observation stations for a given zone
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.zonestations
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-zones-given-type
+      description: Returns a list of zones of a given type
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.zonelisttype
+      with:
+        id: tools.id
+        area: tools.area
+        region: tools.region
+        type: tools.type
+        point: tools.point
+        include_geometry: tools.include_geometry
+        limit: tools.limit
+        effective: tools.effective
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-metadata-about-given-zone
+      description: Returns metadata about a given zone
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.zone
+      with:
+        effective: tools.effective
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-current-zone-forecast-given
+      description: Returns the current zone forecast for a given zone
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: national-weather-service.zoneforecast
+      outputParameters:
+      - type: object
+        mapping: $.
