@@ -10,36 +10,38 @@ created: '2024-01-01'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 tags:
-- Federal Government
-- Forecasting
-- Weather
-apis:
-- aid: national-weather-service:national-weather-service-api
-  name: National Weather Service API
-  tags:
+  - Federal Government
   - Forecasting
   - Weather
-  humanURL: https://www.weather.gov/documentation/services-web-api
-  baseURL: https://api.weather.gov/
-  properties:
-  - url: https://www.weather.gov/documentation/services-web-api
-    type: Documentation
-  - url: https://api.weather.gov/openapi.json
-    type: OpenAPI
-  - url: openapi/national-weather-service-openapi.json
-    type: OpenAPI
-  - type: NaftikoCapability
-    url: capabilities/national-weather-service.yaml
-  description: The National Weather Service API allows developers access to critical forecasts, alerts, and observations,
-    along with other weather data. The API is designed with a cache-friendly approach and based on JSON-LD to promote machine
-    data discovery.
+apis:
+  - aid: national-weather-service:national-weather-service-api
+    name: National Weather Service API
+    tags:
+    - Forecasting
+    - Weather
+    humanURL: https://www.weather.gov/documentation/services-web-api
+    baseURL: https://api.weather.gov/
+    properties:
+    - url: https://www.weather.gov/documentation/services-web-api
+      type: Documentation
+    - url: https://api.weather.gov/openapi.json
+      type: OpenAPI
+    - url: openapi/national-weather-service-openapi.json
+      type: OpenAPI
+    - type: NaftikoCapability
+      url: capabilities/national-weather-service.yaml
+    description: The National Weather Service API allows developers access to critical forecasts, alerts, and observations,
+      along with other weather data. The API is designed with a cache-friendly approach and based on JSON-LD to promote machine
+      data discovery.
 common:
-- type: LinkedIn
-  url: https://www.linkedin.com/company/noaa-nws
-- type: Website
-  url: https://www.weather.gov/
-- type: Portal
-  url: https://www.weather.gov/documentation/services-web-api
+  - type: GitHubOrganization
+    url: https://github.com/weather-gov
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/noaa-nws
+  - type: Website
+    url: https://www.weather.gov/
+  - type: Portal
+    url: https://www.weather.gov/documentation/services-web-api
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
