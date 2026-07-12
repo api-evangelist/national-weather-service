@@ -34,6 +34,10 @@ apis:
       with other weather data. The API is designed with a cache-friendly approach and based on JSON-LD to promote
       machine data discovery.
 common:
+  - type: DomainSecurity
+    url: security/national-weather-service-domain-security.yml
+  - type: Authentication
+    url: authentication/national-weather-service-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/weather-gov
   - type: LinkedIn
