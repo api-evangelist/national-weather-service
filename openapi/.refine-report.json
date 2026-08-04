@@ -1,0 +1,38 @@
+{
+  "provider": "national-weather-service",
+  "sources": [
+    "national-weather-service-alerts-api-openapi.yml",
+    "national-weather-service-aviation-api-openapi.yml",
+    "national-weather-service-glossary-api-openapi.yml",
+    "national-weather-service-gridpoints-api-openapi.yml",
+    "national-weather-service-icons-api-openapi.yml",
+    "national-weather-service-offices-api-openapi.yml",
+    "national-weather-service-points-api-openapi.yml",
+    "national-weather-service-products-api-openapi.yml",
+    "national-weather-service-radar-api-openapi.yml",
+    "national-weather-service-radio-api-openapi.yml",
+    "national-weather-service-stations-api-openapi.yml",
+    "national-weather-service-thumbnails-api-openapi.yml",
+    "national-weather-service-zones-api-openapi.yml"
+  ],
+  "outputs": [
+    "national-weather-service-alerts-api-openapi.yml",
+    "national-weather-service-aviation-api-openapi.yml",
+    "national-weather-service-glossary-api-openapi.yml",
+    "national-weather-service-gridpoints-api-openapi.yml",
+    "national-weather-service-icons-api-openapi.yml",
+    "national-weather-service-offices-api-openapi.yml",
+    "national-weather-service-points-api-openapi.yml",
+    "national-weather-service-products-api-openapi.yml",
+    "national-weather-service-radar-api-openapi.yml",
+    "national-weather-service-radio-api-openapi.yml",
+    "national-weather-service-stations-api-openapi.yml",
+    "national-weather-service-thumbnails-api-openapi.yml",
+    "national-weather-service-zones-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
