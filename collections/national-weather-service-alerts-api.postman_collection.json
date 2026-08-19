@@ -1,0 +1,2052 @@
+{
+  "item": [
+    {
+      "id": "3db08989-e7aa-4e29-a137-d9aac5a8a3a6",
+      "name": "Alerts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9a8a02a2-092a-4d04-8168-f52b6d6a2af6",
+          "name": "alerts query",
+          "request": {
+            "name": "alerts query",
+            "description": {
+              "content": "Returns all alerts",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alerts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "active",
+                  "value": "<boolean>",
+                  "description": "List only active alerts (use /alerts/active endpoints instead)"
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<dateTime>",
+                  "description": "Start time"
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<dateTime>",
+                  "description": "End time"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>,<string>",
+                  "description": "Status (actual, exercise, system, test, draft)"
+                },
+                {
+                  "disabled": false,
+                  "key": "message_type",
+                  "value": "<string>,<string>",
+                  "description": "Message type (alert, update, cancel)"
+                },
+                {
+                  "disabled": false,
+                  "key": "event",
+                  "value": "<string>,<string>",
+                  "description": "Event name"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>,<string>",
+                  "description": "Event code"
+                },
+                {
+                  "disabled": false,
+                  "key": "area",
+                  "value": "<string>,<string>",
+                  "description": "State/territory code or marine area code\nThis parameter is incompatible with the following parameters: point, region, region_type, zone\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "point",
+                  "value": "<string>",
+                  "description": "Point (latitude,longitude)\nThis parameter is incompatible with the following parameters: area, region, region_type, zone\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "region",
+                  "value": "<string>,<string>",
+                  "description": "Marine region code\nThis parameter is incompatible with the following parameters: area, point, region_type, zone\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "region_type",
+                  "value": "<string>",
+                  "description": "Region type (land or marine)\nThis parameter is incompatible with the following parameters: area, point, region, zone\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "zone",
+                  "value": "<string>,<string>",
+                  "description": "Zone ID (forecast or county)\nThis parameter is incompatible with the following parameters: area, point, region, region_type\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "urgency",
+                  "value": "<string>,<string>",
+                  "description": "Urgency (immediate, expected, future, past, unknown)"
+                },
+                {
+                  "disabled": false,
+                  "key": "severity",
+                  "value": "<string>,<string>",
+                  "description": "Severity (extreme, severe, moderate, minor, unknown)"
+                },
+                {
+                  "disabled": false,
+                  "key": "certainty",
+                  "value": "<string>,<string>",
+                  "description": "Certainty (observed, likely, possible, unlikely, unknown)"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "500",
+                  "description": "Limit"
+                },
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "Pagination cursor"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cc775772-3764-490a-b2e1-0694c15dd89a",
+              "name": "A collection of alerts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "active",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "message_type",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "event",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "area",
+                      "value": "OK,MT"
+                    },
+                    {
+                      "key": "point",
+                      "value": "-46.2994,5987.6770756079"
+                    },
+                    {
+                      "key": "region",
+                      "value": "AL,PI"
+                    },
+                    {
+                      "key": "region_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "zone",
+                      "value": "NCZ990,FMC898"
+                    },
+                    {
+                      "key": "urgency",
+                      "value": "Immediate,Expected"
+                    },
+                    {
+                      "key": "severity",
+                      "value": "Severe,Unknown"
+                    },
+                    {
+                      "key": "certainty",
+                      "value": "Possible,Unlikely"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "500"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"FeatureCollection\",\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"id\": \"string\",\n        \"areaDesc\": \"string\",\n        \"geocode\": {\n          \"UGC\": [\n            \"AZC858\",\n            \"PWC679\"\n          ],\n          \"SAME\": [\n            \"188040\",\n            \"487056\"\n          ]\n        },\n        \"affectedZones\": [\n          \"https://ExvHZPpSXMgACdWBDklX.hoiuiv1wvHmW.W-LLRbpjjz76mbqz\",\n          \"https://gwJzkvkmb.mhyHoFmFFIEwu9JIOQCd3l3QyT\"\n        ],\n        \"references\": [\n          {\n            \"@id\": \"http://KtNosvJaKQacYiPlPPOIRPDuhoy.zyMfDF.,O7tQyVb3iJSAQCB3GfyVhAoA4vwcwB3H+-O\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"1986-05-02T13:20:02.168Z\"\n          },\n          {\n            \"@id\": \"https://gJqA.wnmcu-mK8lpsq4XqY7xoNJujJ8+4opDvF4AwuRHsKuk3xYGTQrOM0dvjKEc\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"1996-10-25T16:32:30.427Z\"\n          }\n        ],\n        \"sent\": \"1998-04-04T00:44:06.305Z\",\n        \"effective\": \"1964-08-31T10:23:31.092Z\",\n        \"onset\": \"2004-01-09T08:30:23.007Z\",\n        \"expires\": \"1983-06-06T02:22:59.243Z\",\n        \"ends\": \"1981-07-19T11:40:23.891Z\",\n        \"status\": \"Test\",\n        \"messageType\": \"Cancel\",\n        \"category\": \"Rescue\",\n        \"severity\": \"Extreme\",\n        \"certainty\": \"Possible\",\n        \"urgency\": \"Expected\",\n        \"event\": \"string\",\n        \"sender\": \"string\",\n        \"senderName\": \"string\",\n        \"headline\": \"string\",\n        \"description\": \"string\",\n        \"instruction\": \"string\",\n        \"note\": \"string\",\n        \"response\": \"Avoid\",\n        \"parameters\": {},\n        \"scope\": \"Private\",\n        \"code\": \"string\",\n        \"language\": \"string\",\n        \"web\": \"string\",\n        \"eventCode\": {}\n      },\n      \"id\": \"https://WrzsMCFOvwUCwZeYodIbg.fzkNIaSPBmfjPpC9KJ-wsJP\"\n    },\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"id\": \"string\",\n        \"areaDesc\": \"string\",\n        \"geocode\": {\n          \"UGC\": [\n            \"ANZ424\",\n            \"FMZ592\"\n          ],\n          \"SAME\": [\n            \"505723\",\n            \"683766\"\n          ]\n        },\n        \"affectedZones\": [\n          \"https://nHICuJbRzQSsViQ.mpox6qB-jIqbch-PQx6Ne47w,\",\n          \"https://hkMzCac.low9ZokGVOtFbwXvngxDPVKWtIYKbEu9IxB2JuBTbggk,jH32N1TFktD389W+tS7XN\"\n        ],\n        \"references\": [\n          {\n            \"@id\": \"https://yQhVGycjcBWXQYXDEAPqkRkXsMKxQ.lfjMQBjILZo5cmdD9\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"2024-02-05T16:18:15.195Z\"\n          },\n          {\n            \"@id\": \"http://oiMNMTUYEQkReoOgjJVYmUp.oypsYrUYNKEz2xxj4S5myX7bMw6cT6WalfJtoJ3EapFW+FcOpIj,zJ2InEMC0ri.4iOFq\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"2000-07-29T07:46:10.386Z\"\n          }\n        ],\n        \"sent\": \"2020-01-20T04:38:17.013Z\",\n        \"effective\": \"1955-07-23T11:28:03.160Z\",\n        \"onset\": \"1969-04-22T12:31:54.038Z\",\n        \"expires\": \"2020-03-10T22:04:23.273Z\",\n        \"ends\": \"1948-07-02T07:41:24.398Z\",\n        \"status\": \"Exercise\",\n        \"messageType\": \"Error\",\n        \"category\": \"Other\",\n        \"severity\": \"Moderate\",\n        \"certainty\": \"Possible\",\n        \"urgency\": \"Unknown\",\n        \"event\": \"string\",\n        \"sender\": \"string\",\n        \"senderName\": \"string\",\n        \"headline\": \"string\",\n        \"description\": \"string\",\n        \"instruction\": \"string\",\n        \"note\": \"string\",\n        \"response\": \"Prepare\",\n        \"parameters\": {},\n        \"scope\": \"Private\",\n        \"code\": \"string\",\n        \"language\": \"string\",\n        \"web\": \"string\",\n        \"eventCode\": {}\n      },\n      \"id\": \"https://oGqbpqErPyPmkCdyxGol.otNIypC2Xe4vfIujyY9vc7wkmtF\"\n    }\n  ],\n  \"title\": \"string\",\n  \"updated\": \"1956-10-22T14:34:57.686Z\",\n  \"pagination\": {\n    \"next\": \"https://UUoFdaVsZPtD.dcLLhq5sIEJlBawcDMdDjhVDG\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f049a55a-bf25-4efe-ad49-a45c84cb3831",
+              "name": "Certain common queries may be redirected to discrete URLs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "active",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "message_type",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "event",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "area",
+                      "value": "OK,MT"
+                    },
+                    {
+                      "key": "point",
+                      "value": "-46.2994,5987.6770756079"
+                    },
+                    {
+                      "key": "region",
+                      "value": "AL,PI"
+                    },
+                    {
+                      "key": "region_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "zone",
+                      "value": "NCZ990,FMC898"
+                    },
+                    {
+                      "key": "urgency",
+                      "value": "Immediate,Expected"
+                    },
+                    {
+                      "key": "severity",
+                      "value": "Severe,Unknown"
+                    },
+                    {
+                      "key": "certainty",
+                      "value": "Possible,Unlikely"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "500"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Moved Permanently",
+              "code": 301,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c0131009-b36c-4a13-8d58-1de5b7e95903",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "active",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "message_type",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "event",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "area",
+                      "value": "OK,MT"
+                    },
+                    {
+                      "key": "point",
+                      "value": "-46.2994,5987.6770756079"
+                    },
+                    {
+                      "key": "region",
+                      "value": "AL,PI"
+                    },
+                    {
+                      "key": "region_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "zone",
+                      "value": "NCZ990,FMC898"
+                    },
+                    {
+                      "key": "urgency",
+                      "value": "Immediate,Expected"
+                    },
+                    {
+                      "key": "severity",
+                      "value": "Severe,Unknown"
+                    },
+                    {
+                      "key": "certainty",
+                      "value": "Possible,Unlikely"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "500"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"urn:noaa:nws:api:UnexpectedProblem\",\n  \"title\": \"Unexpected Problem\",\n  \"status\": 500,\n  \"detail\": \"An unexpected problem has occurred.\",\n  \"instance\": \"urn:noaa:nws:api:request:493c3a1d-f87e-407f-ae2c-24483f5aab63\",\n  \"correlationId\": \"493c3a1d-f87e-407f-ae2c-24483f5aab63\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "97652d4f-a789-46a0-9e75-e6db7bbf429f",
+          "name": "alerts active",
+          "request": {
+            "name": "alerts active",
+            "description": {
+              "content": "Returns all currently active alerts",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alerts",
+                "active"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>,<string>",
+                  "description": "Status (actual, exercise, system, test, draft)"
+                },
+                {
+                  "disabled": false,
+                  "key": "message_type",
+                  "value": "<string>,<string>",
+                  "description": "Message type (alert, update, cancel)"
+                },
+                {
+                  "disabled": false,
+                  "key": "event",
+                  "value": "<string>,<string>",
+                  "description": "Event name"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>,<string>",
+                  "description": "Event code"
+                },
+                {
+                  "disabled": false,
+                  "key": "area",
+                  "value": "<string>,<string>",
+                  "description": "State/territory code or marine area code\nThis parameter is incompatible with the following parameters: point, region, region_type, zone\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "point",
+                  "value": "<string>",
+                  "description": "Point (latitude,longitude)\nThis parameter is incompatible with the following parameters: area, region, region_type, zone\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "region",
+                  "value": "<string>,<string>",
+                  "description": "Marine region code\nThis parameter is incompatible with the following parameters: area, point, region_type, zone\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "region_type",
+                  "value": "<string>",
+                  "description": "Region type (land or marine)\nThis parameter is incompatible with the following parameters: area, point, region, zone\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "zone",
+                  "value": "<string>,<string>",
+                  "description": "Zone ID (forecast or county)\nThis parameter is incompatible with the following parameters: area, point, region, region_type\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "urgency",
+                  "value": "<string>,<string>",
+                  "description": "Urgency (immediate, expected, future, past, unknown)"
+                },
+                {
+                  "disabled": false,
+                  "key": "severity",
+                  "value": "<string>,<string>",
+                  "description": "Severity (extreme, severe, moderate, minor, unknown)"
+                },
+                {
+                  "disabled": false,
+                  "key": "certainty",
+                  "value": "<string>,<string>",
+                  "description": "Certainty (observed, likely, possible, unlikely, unknown)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "73e69eca-9bd1-4734-a315-8c6a5f60eabf",
+              "name": "A collection of alerts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts",
+                    "active"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "message_type",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "event",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "area",
+                      "value": "OK,MT"
+                    },
+                    {
+                      "key": "point",
+                      "value": "-46.2994,5987.6770756079"
+                    },
+                    {
+                      "key": "region",
+                      "value": "AL,PI"
+                    },
+                    {
+                      "key": "region_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "zone",
+                      "value": "NCZ990,FMC898"
+                    },
+                    {
+                      "key": "urgency",
+                      "value": "Immediate,Expected"
+                    },
+                    {
+                      "key": "severity",
+                      "value": "Severe,Unknown"
+                    },
+                    {
+                      "key": "certainty",
+                      "value": "Possible,Unlikely"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"FeatureCollection\",\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"id\": \"string\",\n        \"areaDesc\": \"string\",\n        \"geocode\": {\n          \"UGC\": [\n            \"PMC353\",\n            \"WIZ323\"\n          ],\n          \"SAME\": [\n            \"640416\",\n            \"169868\"\n          ]\n        },\n        \"affectedZones\": [\n          \"http://SNG.bhzuW716kh6aibGpm\",\n          \"https://YguVO.ucdbCIjmfi3oMNnvDu-KWWDQZ6FFad,rgNgRuQkd6EtcIi8f5jqMyqiMJ,Yy\"\n        ],\n        \"references\": [\n          {\n            \"@id\": \"https://BdnQwRE.lchuN65XsD8w-sR7qnQH3+JdyOrUtNpVB+AZD9d+afn\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"1972-02-19T21:06:35.974Z\"\n          },\n          {\n            \"@id\": \"http://aClYUdDLlW.bdKqx+AJerKqvh4mndvSZP64ljUaWwnN\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"2017-02-04T04:14:34.643Z\"\n          }\n        ],\n        \"sent\": \"2005-08-09T10:29:09.423Z\",\n        \"effective\": \"2008-10-20T05:13:10.315Z\",\n        \"onset\": \"2013-11-20T02:11:26.725Z\",\n        \"expires\": \"2009-08-13T05:28:11.893Z\",\n        \"ends\": \"2011-12-27T13:56:41.417Z\",\n        \"status\": \"Exercise\",\n        \"messageType\": \"Update\",\n        \"category\": \"Safety\",\n        \"severity\": \"Minor\",\n        \"certainty\": \"Unknown\",\n        \"urgency\": \"Past\",\n        \"event\": \"string\",\n        \"sender\": \"string\",\n        \"senderName\": \"string\",\n        \"headline\": \"string\",\n        \"description\": \"string\",\n        \"instruction\": \"string\",\n        \"note\": \"string\",\n        \"response\": \"None\",\n        \"parameters\": {},\n        \"scope\": \"Restricted\",\n        \"code\": \"string\",\n        \"language\": \"string\",\n        \"web\": \"string\",\n        \"eventCode\": {}\n      },\n      \"id\": \"https://ABNqsEpdmTsvLHxyOJyIGn.pzjTxTcy7zg6NZFzKQwneO-oBXPZLLrBi.G0,\"\n    },\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"id\": \"string\",\n        \"areaDesc\": \"string\",\n        \"geocode\": {\n          \"UGC\": [\n            \"PSZ520\",\n            \"NVC198\"\n          ],\n          \"SAME\": [\n            \"961688\",\n            \"335319\"\n          ]\n        },\n        \"affectedZones\": [\n          \"https://KgUbVEDRjQZnJrujH.szpiPGFEQW.tnXFt+\",\n          \"http://VEemYVLntvtXAXYEfJJGQVmYDC.nmaUtrg2bvZVdGaa6h6LBZCvm.xqpfpPcCgzoUQm2uRxZsDPj,txE1Y\"\n        ],\n        \"references\": [\n          {\n            \"@id\": \"http://UiyM.bxuQOHh.nE.Al7zTZcTfvGB5rRSxGd1FRIp-bbiQgUgJWIWhQDIuXse1ZFod.tlJ7NIkhDS4\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"1977-07-20T23:01:04.001Z\"\n          },\n          {\n            \"@id\": \"http://akZEbaYggWTyEcjFoSYcHyhPQCQYEV.rcdWpLAtelN7sr2euWUUkrdIGbz..X\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"2026-04-08T08:04:24.431Z\"\n          }\n        ],\n        \"sent\": \"1958-12-26T15:52:12.098Z\",\n        \"effective\": \"1965-07-19T12:03:18.186Z\",\n        \"onset\": \"1957-10-01T22:06:16.165Z\",\n        \"expires\": \"2011-01-10T17:53:24.081Z\",\n        \"ends\": \"1999-10-01T20:18:00.943Z\",\n        \"status\": \"System\",\n        \"messageType\": \"Alert\",\n        \"category\": \"Rescue\",\n        \"severity\": \"Moderate\",\n        \"certainty\": \"Unlikely\",\n        \"urgency\": \"Unknown\",\n        \"event\": \"string\",\n        \"sender\": \"string\",\n        \"senderName\": \"string\",\n        \"headline\": \"string\",\n        \"description\": \"string\",\n        \"instruction\": \"string\",\n        \"note\": \"string\",\n        \"response\": \"Prepare\",\n        \"parameters\": {},\n        \"scope\": \"Public\",\n        \"code\": \"string\",\n        \"language\": \"string\",\n        \"web\": \"string\",\n        \"eventCode\": {}\n      },\n      \"id\": \"https://djmkkpBznJUdrvwDsISfouJIKMtun.miqNElKv,JONE6\"\n    }\n  ],\n  \"title\": \"string\",\n  \"updated\": \"1978-01-01T08:40:36.505Z\",\n  \"pagination\": {\n    \"next\": \"https://zFfNvkmJzaeUOndYdHQkEgbG.ukM1jJR5pJdrEc87hwQhx.xweUIHsVnRFjsCvhUxdV5SLvacx3Fbb3mFfrjZ07\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "56af6b51-4b9a-4eb3-986c-601c279e7b2d",
+              "name": "Certain common queries may be redirected to discrete URLs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts",
+                    "active"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "message_type",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "event",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "area",
+                      "value": "OK,MT"
+                    },
+                    {
+                      "key": "point",
+                      "value": "-46.2994,5987.6770756079"
+                    },
+                    {
+                      "key": "region",
+                      "value": "AL,PI"
+                    },
+                    {
+                      "key": "region_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "zone",
+                      "value": "NCZ990,FMC898"
+                    },
+                    {
+                      "key": "urgency",
+                      "value": "Immediate,Expected"
+                    },
+                    {
+                      "key": "severity",
+                      "value": "Severe,Unknown"
+                    },
+                    {
+                      "key": "certainty",
+                      "value": "Possible,Unlikely"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Moved Permanently",
+              "code": 301,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fa5f9d8a-f455-47e4-abf0-22632481a0a9",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts",
+                    "active"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "message_type",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "event",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "area",
+                      "value": "OK,MT"
+                    },
+                    {
+                      "key": "point",
+                      "value": "-46.2994,5987.6770756079"
+                    },
+                    {
+                      "key": "region",
+                      "value": "AL,PI"
+                    },
+                    {
+                      "key": "region_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "zone",
+                      "value": "NCZ990,FMC898"
+                    },
+                    {
+                      "key": "urgency",
+                      "value": "Immediate,Expected"
+                    },
+                    {
+                      "key": "severity",
+                      "value": "Severe,Unknown"
+                    },
+                    {
+                      "key": "certainty",
+                      "value": "Possible,Unlikely"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"urn:noaa:nws:api:UnexpectedProblem\",\n  \"title\": \"Unexpected Problem\",\n  \"status\": 500,\n  \"detail\": \"An unexpected problem has occurred.\",\n  \"instance\": \"urn:noaa:nws:api:request:493c3a1d-f87e-407f-ae2c-24483f5aab63\",\n  \"correlationId\": \"493c3a1d-f87e-407f-ae2c-24483f5aab63\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5ae85044-ad04-49a3-87dc-47e7ec6abd65",
+          "name": "alerts active count",
+          "request": {
+            "name": "alerts active count",
+            "description": {
+              "content": "Returns info on the number of active alerts",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alerts",
+                "active",
+                "count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/ld+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9b993eed-bc8d-467c-bae1-6b61d3f7b078",
+              "name": "A data structure showing the counts of active alerts broken down by various categories",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts",
+                    "active",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/ld+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/ld+json"
+                }
+              ],
+              "body": "{\n  \"total\": 7555,\n  \"land\": 6096,\n  \"marine\": 4791,\n  \"regions\": {\n    \"key_0\": 9930,\n    \"key_1\": 3496,\n    \"key_2\": 8437,\n    \"key_3\": 3528,\n    \"key_4\": 6235\n  },\n  \"areas\": {\n    \"key_0\": 4658\n  },\n  \"zones\": {\n    \"key_0\": 3594,\n    \"key_1\": 8950\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ba71755b-2527-4a32-aed8-71eb69966d9a",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts",
+                    "active",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"urn:noaa:nws:api:UnexpectedProblem\",\n  \"title\": \"Unexpected Problem\",\n  \"status\": 500,\n  \"detail\": \"An unexpected problem has occurred.\",\n  \"instance\": \"urn:noaa:nws:api:request:493c3a1d-f87e-407f-ae2c-24483f5aab63\",\n  \"correlationId\": \"493c3a1d-f87e-407f-ae2c-24483f5aab63\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b7560807-0c1b-426e-83f1-c8b3b1ac4087",
+          "name": "alerts active zone",
+          "request": {
+            "name": "alerts active zone",
+            "description": {
+              "content": "Returns active alerts for the given NWS public zone or county",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alerts",
+                "active",
+                "zone",
+                ":zoneId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "zoneId",
+                  "description": "(Required) NWS public zone/county identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2856b165-c4de-4b49-92c6-81525ad8f032",
+              "name": "A collection of alerts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts",
+                    "active",
+                    "zone",
+                    ":zoneId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "zoneId",
+                      "description": "(Required) NWS public zone/county identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"FeatureCollection\",\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"id\": \"string\",\n        \"areaDesc\": \"string\",\n        \"geocode\": {\n          \"UGC\": [\n            \"PMC353\",\n            \"WIZ323\"\n          ],\n          \"SAME\": [\n            \"640416\",\n            \"169868\"\n          ]\n        },\n        \"affectedZones\": [\n          \"http://SNG.bhzuW716kh6aibGpm\",\n          \"https://YguVO.ucdbCIjmfi3oMNnvDu-KWWDQZ6FFad,rgNgRuQkd6EtcIi8f5jqMyqiMJ,Yy\"\n        ],\n        \"references\": [\n          {\n            \"@id\": \"https://BdnQwRE.lchuN65XsD8w-sR7qnQH3+JdyOrUtNpVB+AZD9d+afn\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"1972-02-19T21:06:35.974Z\"\n          },\n          {\n            \"@id\": \"http://aClYUdDLlW.bdKqx+AJerKqvh4mndvSZP64ljUaWwnN\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"2017-02-04T04:14:34.643Z\"\n          }\n        ],\n        \"sent\": \"2005-08-09T10:29:09.423Z\",\n        \"effective\": \"2008-10-20T05:13:10.315Z\",\n        \"onset\": \"2013-11-20T02:11:26.725Z\",\n        \"expires\": \"2009-08-13T05:28:11.893Z\",\n        \"ends\": \"2011-12-27T13:56:41.417Z\",\n        \"status\": \"Exercise\",\n        \"messageType\": \"Update\",\n        \"category\": \"Safety\",\n        \"severity\": \"Minor\",\n        \"certainty\": \"Unknown\",\n        \"urgency\": \"Past\",\n        \"event\": \"string\",\n        \"sender\": \"string\",\n        \"senderName\": \"string\",\n        \"headline\": \"string\",\n        \"description\": \"string\",\n        \"instruction\": \"string\",\n        \"note\": \"string\",\n        \"response\": \"None\",\n        \"parameters\": {},\n        \"scope\": \"Restricted\",\n        \"code\": \"string\",\n        \"language\": \"string\",\n        \"web\": \"string\",\n        \"eventCode\": {}\n      },\n      \"id\": \"https://ABNqsEpdmTsvLHxyOJyIGn.pzjTxTcy7zg6NZFzKQwneO-oBXPZLLrBi.G0,\"\n    },\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"id\": \"string\",\n        \"areaDesc\": \"string\",\n        \"geocode\": {\n          \"UGC\": [\n            \"PSZ520\",\n            \"NVC198\"\n          ],\n          \"SAME\": [\n            \"961688\",\n            \"335319\"\n          ]\n        },\n        \"affectedZones\": [\n          \"https://KgUbVEDRjQZnJrujH.szpiPGFEQW.tnXFt+\",\n          \"http://VEemYVLntvtXAXYEfJJGQVmYDC.nmaUtrg2bvZVdGaa6h6LBZCvm.xqpfpPcCgzoUQm2uRxZsDPj,txE1Y\"\n        ],\n        \"references\": [\n          {\n            \"@id\": \"http://UiyM.bxuQOHh.nE.Al7zTZcTfvGB5rRSxGd1FRIp-bbiQgUgJWIWhQDIuXse1ZFod.tlJ7NIkhDS4\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"1977-07-20T23:01:04.001Z\"\n          },\n          {\n            \"@id\": \"http://akZEbaYggWTyEcjFoSYcHyhPQCQYEV.rcdWpLAtelN7sr2euWUUkrdIGbz..X\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"2026-04-08T08:04:24.431Z\"\n          }\n        ],\n        \"sent\": \"1958-12-26T15:52:12.098Z\",\n        \"effective\": \"1965-07-19T12:03:18.186Z\",\n        \"onset\": \"1957-10-01T22:06:16.165Z\",\n        \"expires\": \"2011-01-10T17:53:24.081Z\",\n        \"ends\": \"1999-10-01T20:18:00.943Z\",\n        \"status\": \"System\",\n        \"messageType\": \"Alert\",\n        \"category\": \"Rescue\",\n        \"severity\": \"Moderate\",\n        \"certainty\": \"Unlikely\",\n        \"urgency\": \"Unknown\",\n        \"event\": \"string\",\n        \"sender\": \"string\",\n        \"senderName\": \"string\",\n        \"headline\": \"string\",\n        \"description\": \"string\",\n        \"instruction\": \"string\",\n        \"note\": \"string\",\n        \"response\": \"Prepare\",\n        \"parameters\": {},\n        \"scope\": \"Public\",\n        \"code\": \"string\",\n        \"language\": \"string\",\n        \"web\": \"string\",\n        \"eventCode\": {}\n      },\n      \"id\": \"https://djmkkpBznJUdrvwDsISfouJIKMtun.miqNElKv,JONE6\"\n    }\n  ],\n  \"title\": \"string\",\n  \"updated\": \"1978-01-01T08:40:36.505Z\",\n  \"pagination\": {\n    \"next\": \"https://zFfNvkmJzaeUOndYdHQkEgbG.ukM1jJR5pJdrEc87hwQhx.xweUIHsVnRFjsCvhUxdV5SLvacx3Fbb3mFfrjZ07\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "197e9a22-cde2-43d9-8931-5dad6fede81f",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts",
+                    "active",
+                    "zone",
+                    ":zoneId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "zoneId",
+                      "description": "(Required) NWS public zone/county identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"urn:noaa:nws:api:UnexpectedProblem\",\n  \"title\": \"Unexpected Problem\",\n  \"status\": 500,\n  \"detail\": \"An unexpected problem has occurred.\",\n  \"instance\": \"urn:noaa:nws:api:request:493c3a1d-f87e-407f-ae2c-24483f5aab63\",\n  \"correlationId\": \"493c3a1d-f87e-407f-ae2c-24483f5aab63\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "22322c15-ba33-40cc-9b21-2032ea150cbf",
+          "name": "alerts active area",
+          "request": {
+            "name": "alerts active area",
+            "description": {
+              "content": "Returns active alerts for the given area (state or marine area)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alerts",
+                "active",
+                "area",
+                ":area"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "area",
+                  "description": "(Required) State/area ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c1f0a900-5b29-45a5-b766-c9ce3c639001",
+              "name": "A collection of alerts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts",
+                    "active",
+                    "area",
+                    ":area"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "area",
+                      "description": "(Required) State/area ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"FeatureCollection\",\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"id\": \"string\",\n        \"areaDesc\": \"string\",\n        \"geocode\": {\n          \"UGC\": [\n            \"PMC353\",\n            \"WIZ323\"\n          ],\n          \"SAME\": [\n            \"640416\",\n            \"169868\"\n          ]\n        },\n        \"affectedZones\": [\n          \"http://SNG.bhzuW716kh6aibGpm\",\n          \"https://YguVO.ucdbCIjmfi3oMNnvDu-KWWDQZ6FFad,rgNgRuQkd6EtcIi8f5jqMyqiMJ,Yy\"\n        ],\n        \"references\": [\n          {\n            \"@id\": \"https://BdnQwRE.lchuN65XsD8w-sR7qnQH3+JdyOrUtNpVB+AZD9d+afn\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"1972-02-19T21:06:35.974Z\"\n          },\n          {\n            \"@id\": \"http://aClYUdDLlW.bdKqx+AJerKqvh4mndvSZP64ljUaWwnN\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"2017-02-04T04:14:34.643Z\"\n          }\n        ],\n        \"sent\": \"2005-08-09T10:29:09.423Z\",\n        \"effective\": \"2008-10-20T05:13:10.315Z\",\n        \"onset\": \"2013-11-20T02:11:26.725Z\",\n        \"expires\": \"2009-08-13T05:28:11.893Z\",\n        \"ends\": \"2011-12-27T13:56:41.417Z\",\n        \"status\": \"Exercise\",\n        \"messageType\": \"Update\",\n        \"category\": \"Safety\",\n        \"severity\": \"Minor\",\n        \"certainty\": \"Unknown\",\n        \"urgency\": \"Past\",\n        \"event\": \"string\",\n        \"sender\": \"string\",\n        \"senderName\": \"string\",\n        \"headline\": \"string\",\n        \"description\": \"string\",\n        \"instruction\": \"string\",\n        \"note\": \"string\",\n        \"response\": \"None\",\n        \"parameters\": {},\n        \"scope\": \"Restricted\",\n        \"code\": \"string\",\n        \"language\": \"string\",\n        \"web\": \"string\",\n        \"eventCode\": {}\n      },\n      \"id\": \"https://ABNqsEpdmTsvLHxyOJyIGn.pzjTxTcy7zg6NZFzKQwneO-oBXPZLLrBi.G0,\"\n    },\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"id\": \"string\",\n        \"areaDesc\": \"string\",\n        \"geocode\": {\n          \"UGC\": [\n            \"PSZ520\",\n            \"NVC198\"\n          ],\n          \"SAME\": [\n            \"961688\",\n            \"335319\"\n          ]\n        },\n        \"affectedZones\": [\n          \"https://KgUbVEDRjQZnJrujH.szpiPGFEQW.tnXFt+\",\n          \"http://VEemYVLntvtXAXYEfJJGQVmYDC.nmaUtrg2bvZVdGaa6h6LBZCvm.xqpfpPcCgzoUQm2uRxZsDPj,txE1Y\"\n        ],\n        \"references\": [\n          {\n            \"@id\": \"http://UiyM.bxuQOHh.nE.Al7zTZcTfvGB5rRSxGd1FRIp-bbiQgUgJWIWhQDIuXse1ZFod.tlJ7NIkhDS4\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"1977-07-20T23:01:04.001Z\"\n          },\n          {\n            \"@id\": \"http://akZEbaYggWTyEcjFoSYcHyhPQCQYEV.rcdWpLAtelN7sr2euWUUkrdIGbz..X\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"2026-04-08T08:04:24.431Z\"\n          }\n        ],\n        \"sent\": \"1958-12-26T15:52:12.098Z\",\n        \"effective\": \"1965-07-19T12:03:18.186Z\",\n        \"onset\": \"1957-10-01T22:06:16.165Z\",\n        \"expires\": \"2011-01-10T17:53:24.081Z\",\n        \"ends\": \"1999-10-01T20:18:00.943Z\",\n        \"status\": \"System\",\n        \"messageType\": \"Alert\",\n        \"category\": \"Rescue\",\n        \"severity\": \"Moderate\",\n        \"certainty\": \"Unlikely\",\n        \"urgency\": \"Unknown\",\n        \"event\": \"string\",\n        \"sender\": \"string\",\n        \"senderName\": \"string\",\n        \"headline\": \"string\",\n        \"description\": \"string\",\n        \"instruction\": \"string\",\n        \"note\": \"string\",\n        \"response\": \"Prepare\",\n        \"parameters\": {},\n        \"scope\": \"Public\",\n        \"code\": \"string\",\n        \"language\": \"string\",\n        \"web\": \"string\",\n        \"eventCode\": {}\n      },\n      \"id\": \"https://djmkkpBznJUdrvwDsISfouJIKMtun.miqNElKv,JONE6\"\n    }\n  ],\n  \"title\": \"string\",\n  \"updated\": \"1978-01-01T08:40:36.505Z\",\n  \"pagination\": {\n    \"next\": \"https://zFfNvkmJzaeUOndYdHQkEgbG.ukM1jJR5pJdrEc87hwQhx.xweUIHsVnRFjsCvhUxdV5SLvacx3Fbb3mFfrjZ07\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "90628277-9fb1-4e16-913a-c44cf4769314",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts",
+                    "active",
+                    "area",
+                    ":area"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "area",
+                      "description": "(Required) State/area ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"urn:noaa:nws:api:UnexpectedProblem\",\n  \"title\": \"Unexpected Problem\",\n  \"status\": 500,\n  \"detail\": \"An unexpected problem has occurred.\",\n  \"instance\": \"urn:noaa:nws:api:request:493c3a1d-f87e-407f-ae2c-24483f5aab63\",\n  \"correlationId\": \"493c3a1d-f87e-407f-ae2c-24483f5aab63\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "593e6711-b253-42dd-9284-8cb4892a02c4",
+          "name": "alerts active region",
+          "request": {
+            "name": "alerts active region",
+            "description": {
+              "content": "Returns active alerts for the given marine region",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alerts",
+                "active",
+                "region",
+                ":region"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) Marine region ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "914f019f-8d55-4816-88f5-a21634ea9b02",
+              "name": "A collection of alerts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts",
+                    "active",
+                    "region",
+                    ":region"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) Marine region ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"FeatureCollection\",\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"id\": \"string\",\n        \"areaDesc\": \"string\",\n        \"geocode\": {\n          \"UGC\": [\n            \"PMC353\",\n            \"WIZ323\"\n          ],\n          \"SAME\": [\n            \"640416\",\n            \"169868\"\n          ]\n        },\n        \"affectedZones\": [\n          \"http://SNG.bhzuW716kh6aibGpm\",\n          \"https://YguVO.ucdbCIjmfi3oMNnvDu-KWWDQZ6FFad,rgNgRuQkd6EtcIi8f5jqMyqiMJ,Yy\"\n        ],\n        \"references\": [\n          {\n            \"@id\": \"https://BdnQwRE.lchuN65XsD8w-sR7qnQH3+JdyOrUtNpVB+AZD9d+afn\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"1972-02-19T21:06:35.974Z\"\n          },\n          {\n            \"@id\": \"http://aClYUdDLlW.bdKqx+AJerKqvh4mndvSZP64ljUaWwnN\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"2017-02-04T04:14:34.643Z\"\n          }\n        ],\n        \"sent\": \"2005-08-09T10:29:09.423Z\",\n        \"effective\": \"2008-10-20T05:13:10.315Z\",\n        \"onset\": \"2013-11-20T02:11:26.725Z\",\n        \"expires\": \"2009-08-13T05:28:11.893Z\",\n        \"ends\": \"2011-12-27T13:56:41.417Z\",\n        \"status\": \"Exercise\",\n        \"messageType\": \"Update\",\n        \"category\": \"Safety\",\n        \"severity\": \"Minor\",\n        \"certainty\": \"Unknown\",\n        \"urgency\": \"Past\",\n        \"event\": \"string\",\n        \"sender\": \"string\",\n        \"senderName\": \"string\",\n        \"headline\": \"string\",\n        \"description\": \"string\",\n        \"instruction\": \"string\",\n        \"note\": \"string\",\n        \"response\": \"None\",\n        \"parameters\": {},\n        \"scope\": \"Restricted\",\n        \"code\": \"string\",\n        \"language\": \"string\",\n        \"web\": \"string\",\n        \"eventCode\": {}\n      },\n      \"id\": \"https://ABNqsEpdmTsvLHxyOJyIGn.pzjTxTcy7zg6NZFzKQwneO-oBXPZLLrBi.G0,\"\n    },\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"id\": \"string\",\n        \"areaDesc\": \"string\",\n        \"geocode\": {\n          \"UGC\": [\n            \"PSZ520\",\n            \"NVC198\"\n          ],\n          \"SAME\": [\n            \"961688\",\n            \"335319\"\n          ]\n        },\n        \"affectedZones\": [\n          \"https://KgUbVEDRjQZnJrujH.szpiPGFEQW.tnXFt+\",\n          \"http://VEemYVLntvtXAXYEfJJGQVmYDC.nmaUtrg2bvZVdGaa6h6LBZCvm.xqpfpPcCgzoUQm2uRxZsDPj,txE1Y\"\n        ],\n        \"references\": [\n          {\n            \"@id\": \"http://UiyM.bxuQOHh.nE.Al7zTZcTfvGB5rRSxGd1FRIp-bbiQgUgJWIWhQDIuXse1ZFod.tlJ7NIkhDS4\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"1977-07-20T23:01:04.001Z\"\n          },\n          {\n            \"@id\": \"http://akZEbaYggWTyEcjFoSYcHyhPQCQYEV.rcdWpLAtelN7sr2euWUUkrdIGbz..X\",\n            \"identifier\": \"string\",\n            \"sender\": \"string\",\n            \"sent\": \"2026-04-08T08:04:24.431Z\"\n          }\n        ],\n        \"sent\": \"1958-12-26T15:52:12.098Z\",\n        \"effective\": \"1965-07-19T12:03:18.186Z\",\n        \"onset\": \"1957-10-01T22:06:16.165Z\",\n        \"expires\": \"2011-01-10T17:53:24.081Z\",\n        \"ends\": \"1999-10-01T20:18:00.943Z\",\n        \"status\": \"System\",\n        \"messageType\": \"Alert\",\n        \"category\": \"Rescue\",\n        \"severity\": \"Moderate\",\n        \"certainty\": \"Unlikely\",\n        \"urgency\": \"Unknown\",\n        \"event\": \"string\",\n        \"sender\": \"string\",\n        \"senderName\": \"string\",\n        \"headline\": \"string\",\n        \"description\": \"string\",\n        \"instruction\": \"string\",\n        \"note\": \"string\",\n        \"response\": \"Prepare\",\n        \"parameters\": {},\n        \"scope\": \"Public\",\n        \"code\": \"string\",\n        \"language\": \"string\",\n        \"web\": \"string\",\n        \"eventCode\": {}\n      },\n      \"id\": \"https://djmkkpBznJUdrvwDsISfouJIKMtun.miqNElKv,JONE6\"\n    }\n  ],\n  \"title\": \"string\",\n  \"updated\": \"1978-01-01T08:40:36.505Z\",\n  \"pagination\": {\n    \"next\": \"https://zFfNvkmJzaeUOndYdHQkEgbG.ukM1jJR5pJdrEc87hwQhx.xweUIHsVnRFjsCvhUxdV5SLvacx3Fbb3mFfrjZ07\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fb45554b-b998-4995-9b12-447479752d36",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts",
+                    "active",
+                    "region",
+                    ":region"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) Marine region ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"urn:noaa:nws:api:UnexpectedProblem\",\n  \"title\": \"Unexpected Problem\",\n  \"status\": 500,\n  \"detail\": \"An unexpected problem has occurred.\",\n  \"instance\": \"urn:noaa:nws:api:request:493c3a1d-f87e-407f-ae2c-24483f5aab63\",\n  \"correlationId\": \"493c3a1d-f87e-407f-ae2c-24483f5aab63\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "86069ee9-0ea9-45d5-b622-1dbeaaf1192e",
+          "name": "alerts types",
+          "request": {
+            "name": "alerts types",
+            "description": {
+              "content": "Returns a list of alert types",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alerts",
+                "types"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/ld+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d98af0db-d982-4f0f-816d-abab67442242",
+              "name": "A list of recognized event types",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts",
+                    "types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/ld+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/ld+json"
+                }
+              ],
+              "body": "{\n  \"eventTypes\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "52545206-e043-4d91-9e80-8016a4023e36",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts",
+                    "types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"urn:noaa:nws:api:UnexpectedProblem\",\n  \"title\": \"Unexpected Problem\",\n  \"status\": 500,\n  \"detail\": \"An unexpected problem has occurred.\",\n  \"instance\": \"urn:noaa:nws:api:request:493c3a1d-f87e-407f-ae2c-24483f5aab63\",\n  \"correlationId\": \"493c3a1d-f87e-407f-ae2c-24483f5aab63\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2606155c-636d-4c02-8242-96f7f66ca065",
+          "name": "alerts single",
+          "request": {
+            "name": "alerts single",
+            "description": {
+              "content": "Returns a specific alert",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alerts",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Alert identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "07101f0c-332e-4e32-a2a4-514a114cebf9",
+              "name": "An alert record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Alert identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"Feature\",\n  \"geometry\": {\n    \"type\": \"Point\",\n    \"coordinates\": [\n      7127.36926972773,\n      1768.9426351865557\n    ],\n    \"bbox\": [\n      8465.484389988733,\n      5201.9531542733375,\n      3040.617537118121,\n      9180.907094740794\n    ]\n  },\n  \"properties\": {\n    \"id\": \"string\",\n    \"areaDesc\": \"string\",\n    \"geocode\": {\n      \"UGC\": [\n        \"VIC188\",\n        \"SCC142\"\n      ],\n      \"SAME\": [\n        \"565506\",\n        \"448377\"\n      ]\n    },\n    \"affectedZones\": [\n      \"http://UdTKkyzN.kgjhn.vlleMHMbyXl5gyYDR8Rw2RTDwKtS0M.wMALRcAg5kSRabPBor.i1\",\n      \"http://NteunXHIpjzJWRiu.pykrMOdbuPNC9zqep2MFZ8ZZhsEnoJ9Cn83I4z,qc330\"\n    ],\n    \"references\": [\n      {\n        \"@id\": \"https://ioStJjwSyqoNyxzNogALdRsNKDzPu.tixqz5hAANGtllfbUXv3BI,C3rCRc2kb50DwXVCpJGlTES-UKDK-cbd\",\n        \"identifier\": \"string\",\n        \"sender\": \"string\",\n        \"sent\": \"1981-06-29T16:54:19.291Z\"\n      },\n      {\n        \"@id\": \"https://qQwKtfRHKzGS.nbzcmnGjA4e01WYPLOFAcMakf8xjp,VAD0+4nDN4yyqLJ3vPevOXerhCjCAgEAB-\",\n        \"identifier\": \"string\",\n        \"sender\": \"string\",\n        \"sent\": \"1992-01-16T11:48:13.845Z\"\n      }\n    ],\n    \"sent\": \"2025-01-26T20:56:24.178Z\",\n    \"effective\": \"1954-04-06T19:37:40.712Z\",\n    \"onset\": \"2025-02-08T06:52:46.925Z\",\n    \"expires\": \"1962-02-12T20:21:22.155Z\",\n    \"ends\": \"1960-10-19T00:53:10.526Z\",\n    \"status\": \"Actual\",\n    \"messageType\": \"Ack\",\n    \"category\": \"Infra\",\n    \"severity\": \"Moderate\",\n    \"certainty\": \"Observed\",\n    \"urgency\": \"Immediate\",\n    \"event\": \"string\",\n    \"sender\": \"string\",\n    \"senderName\": \"string\",\n    \"headline\": \"string\",\n    \"description\": \"string\",\n    \"instruction\": \"string\",\n    \"note\": \"string\",\n    \"response\": \"Assess\",\n    \"parameters\": {},\n    \"scope\": \"Restricted\",\n    \"code\": \"string\",\n    \"language\": \"string\",\n    \"web\": \"string\",\n    \"eventCode\": {}\n  },\n  \"id\": \"http://uZzCJkLac.oiQBA\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "70d84228-44dc-4865-8562-c8e3a9a0f99f",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Alert identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"urn:noaa:nws:api:UnexpectedProblem\",\n  \"title\": \"Unexpected Problem\",\n  \"status\": 500,\n  \"detail\": \"An unexpected problem has occurred.\",\n  \"instance\": \"urn:noaa:nws:api:request:493c3a1d-f87e-407f-ae2c-24483f5aab63\",\n  \"correlationId\": \"493c3a1d-f87e-407f-ae2c-24483f5aab63\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.weather.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "User-Agent"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ba424470-197f-4b2e-b365-abeb5ffea8c6",
+    "name": "weather.gov Alerts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "weather.gov API",
+      "type": "text/plain"
+    }
+  }
+}

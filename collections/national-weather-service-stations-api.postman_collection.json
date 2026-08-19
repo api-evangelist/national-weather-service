@@ -1,0 +1,1499 @@
+{
+  "item": [
+    {
+      "id": "59d5247e-d261-4aa0-8338-a95a892c9486",
+      "name": "Stations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "71a97a61-d74b-4b94-a5da-d5dd006c7244",
+          "name": "station observation list",
+          "request": {
+            "name": "station observation list",
+            "description": {
+              "content": "Returns a list of observations for a given station",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "stations",
+                ":stationId",
+                "observations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<dateTime>",
+                  "description": "Start time"
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<dateTime>",
+                  "description": "End time"
+                },
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "Pagination cursor"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Limit"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "stationId",
+                  "description": "(Required) Observation station ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c7ec792b-7bef-4650-90c9-a6efa70f6fff",
+              "name": "A collection of observation records.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stations",
+                    ":stationId",
+                    "observations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "stationId",
+                      "description": "(Required) Observation station ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"FeatureCollection\",\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"geometry\": \"string\",\n        \"@id\": \"https://vZEQuUFbMcAICGgnDoxK.aaqTQub\",\n        \"@type\": \"wx:ObservationStation\",\n        \"elevation\": {\n          \"value\": 989.6169618179384,\n          \"maxValue\": 1508.8796592354336,\n          \"minValue\": 8543.224438860585,\n          \"unitCode\": \"e,tmlrk-P\",\n          \"qualityControl\": \"S\"\n        },\n        \"station\": \"https://HUHF.yzT4I2fSTu+tXjyHDt\",\n        \"stationId\": \"string\",\n        \"stationName\": \"string\",\n        \"timestamp\": \"2017-04-16T21:42:57.651Z\",\n        \"rawMessage\": \"string\",\n        \"textDescription\": \"string\",\n        \"icon\": \"https://NZhBfKfCRrJdIOGSlhGqCCSSCLPfQR.zbyaer95DeCZ4o5sT2E-1VnffL6HxqI\",\n        \"presentWeather\": [\n          {\n            \"intensity\": \"light\",\n            \"modifier\": \"patches\",\n            \"weather\": \"squalls\",\n            \"rawString\": \"string\",\n            \"inVicinity\": false\n          },\n          {\n            \"intensity\": \"heavy\",\n            \"modifier\": \"patches\",\n            \"weather\": \"hail\",\n            \"rawString\": \"string\",\n            \"inVicinity\": true\n          }\n        ],\n        \"temperature\": {\n          \"value\": 57.52127886346492,\n          \"maxValue\": 1890.2077220499934,\n          \"minValue\": 3084.8310759689357,\n          \"unitCode\": \"\",\n          \"qualityControl\": \"Z\"\n        },\n        \"dewpoint\": {\n          \"value\": 3041.116606550124,\n          \"maxValue\": 2175.89592590848,\n          \"minValue\": 1922.433071482842,\n          \"unitCode\": \"2\",\n          \"qualityControl\": \"S\"\n        },\n        \"windDirection\": {\n          \"value\": 2786.8841607399986,\n          \"maxValue\": 9920.111312630313,\n          \"minValue\": 7543.603253994446,\n          \"unitCode\": \"wmo:NeM~a,\",\n          \"qualityControl\": \"B\"\n        },\n        \"windSpeed\": {\n          \"value\": 1067.3321811008573,\n          \"maxValue\": 1922.3193768636727,\n          \"minValue\": 2321.928544884081,\n          \"unitCode\": \"ibq1@pK\",\n          \"qualityControl\": \"Q\"\n        },\n        \"windGust\": {\n          \"value\": 966.3252566678593,\n          \"maxValue\": 6288.870363777016,\n          \"minValue\": 4426.629945264451,\n          \"unitCode\": \"N@jHo]\",\n          \"qualityControl\": \"V\"\n        },\n        \"barometricPressure\": {\n          \"value\": 7062.4795123179065,\n          \"maxValue\": 822.8876647010463,\n          \"minValue\": 848.4367683399241,\n          \"unitCode\": \"Q\",\n          \"qualityControl\": \"Q\"\n        },\n        \"seaLevelPressure\": {\n          \"value\": 301.5371421726076,\n          \"maxValue\": 8755.310088367352,\n          \"minValue\": 4642.0400472708525,\n          \"unitCode\": \"uc:AYI.\",\n          \"qualityControl\": \"Z\"\n        },\n        \"visibility\": {\n          \"value\": 4262.3688370855125,\n          \"maxValue\": 87.27467493549912,\n          \"minValue\": 4011.3751022845654,\n          \"unitCode\": \"CPu0!,^?Q8\",\n          \"qualityControl\": \"B\"\n        },\n        \"maxTemperatureLast24Hours\": {\n          \"value\": 1675.645949285881,\n          \"maxValue\": 8370.179216614295,\n          \"minValue\": 1937.6589779105213,\n          \"unitCode\": \"wmo:#Q(26\",\n          \"qualityControl\": \"C\"\n        },\n        \"minTemperatureLast24Hours\": {\n          \"value\": 6977.045573953641,\n          \"maxValue\": 5376.357246862694,\n          \"minValue\": 6955.394407310106,\n          \"unitCode\": \"Fr32pJ+8$P\",\n          \"qualityControl\": \"V\"\n        },\n        \"precipitationLastHour\": {\n          \"value\": 6458.419220857043,\n          \"maxValue\": 4781.741766254548,\n          \"minValue\": 9784.341116657122,\n          \"unitCode\": \"uc:?iO\",\n          \"qualityControl\": \"V\"\n        },\n        \"precipitationLast3Hours\": {\n          \"value\": 6032.072191414326,\n          \"maxValue\": 9494.740346069617,\n          \"minValue\": 1538.2819352274234,\n          \"unitCode\": \"\",\n          \"qualityControl\": \"C\"\n        },\n        \"precipitationLast6Hours\": {\n          \"value\": 6578.1438826718295,\n          \"maxValue\": 7828.191635513003,\n          \"minValue\": 2894.0038675760784,\n          \"unitCode\": \"wmo:z\",\n          \"qualityControl\": \"V\"\n        },\n        \"relativeHumidity\": {\n          \"value\": 8471.672429754582,\n          \"maxValue\": 2168.170926659866,\n          \"minValue\": 8534.07237269272,\n          \"unitCode\": \"\",\n          \"qualityControl\": \"S\"\n        },\n        \"windChill\": {\n          \"value\": 4727.2108182792135,\n          \"maxValue\": 8257.001183722026,\n          \"minValue\": 8037.864466353666,\n          \"unitCode\": \"uc:\",\n          \"qualityControl\": \"S\"\n        },\n        \"heatIndex\": {\n          \"value\": 7713.772460118562,\n          \"maxValue\": 4720.610383950883,\n          \"minValue\": 5500.963397237309,\n          \"unitCode\": \"nwsUnit:^\",\n          \"qualityControl\": \"G\"\n        },\n        \"cloudLayers\": [\n          {\n            \"base\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"maxValue\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"minValue\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"unitCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"qualityControl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"amount\": \"SKC\"\n          },\n          {\n            \"base\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"maxValue\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"minValue\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"unitCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"qualityControl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"amount\": \"FEW\"\n          }\n        ]\n      },\n      \"id\": \"http://GiyM.xepG0v0Ck5bLbwHURZS4zC,iutTo-ypdorcAEQCsHCwwde0Y\"\n    },\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"geometry\": \"string\",\n        \"@id\": \"https://gI.rnwxwZ-6yVT9xHG-TraUqp97STZTkKd2qpm0dyiAhyqR.zho42h4sfoFyqRXpKtcY,bD5\",\n        \"@type\": \"wx:ObservationStation\",\n        \"elevation\": {\n          \"value\": 4443.296174713677,\n          \"maxValue\": 801.2712797758903,\n          \"minValue\": 2623.4396473286956,\n          \"unitCode\": \"m3)WM\",\n          \"qualityControl\": \"S\"\n        },\n        \"station\": \"http://tZrnVNMzfPXfkQsMmIgzDmtx.vppfvcgfvNgpO0B9vgF1rRNIN7tTKsg4cJdjEvQ1,TAAOH.4MdG3LXBQ8sLpDBJ8NF\",\n        \"stationId\": \"string\",\n        \"stationName\": \"string\",\n        \"timestamp\": \"2018-03-13T20:44:43.245Z\",\n        \"rawMessage\": \"string\",\n        \"textDescription\": \"string\",\n        \"icon\": \"https://dGgTjkvixYjpYjQqfhIu.acqtbYiZvlwfYq,J4wj2gt\",\n        \"presentWeather\": [\n          {\n            \"intensity\": \"light\",\n            \"modifier\": \"freezing\",\n            \"weather\": \"squalls\",\n            \"rawString\": \"string\",\n            \"inVicinity\": false\n          },\n          {\n            \"intensity\": \"light\",\n            \"modifier\": \"patches\",\n            \"weather\": \"squalls\",\n            \"rawString\": \"string\",\n            \"inVicinity\": false\n          }\n        ],\n        \"temperature\": {\n          \"value\": 9336.953631435099,\n          \"maxValue\": 2065.6027502856987,\n          \"minValue\": 6327.574449019634,\n          \"unitCode\": \"wmoUnit:+KY^TZHj\",\n          \"qualityControl\": \"C\"\n        },\n        \"dewpoint\": {\n          \"value\": 248.36108224191798,\n          \"maxValue\": 8224.474408914793,\n          \"minValue\": 795.7678157053083,\n          \"unitCode\": \"n\\\"VI=3(\",\n          \"qualityControl\": \"Z\"\n        },\n        \"windDirection\": {\n          \"value\": 7570.334912170145,\n          \"maxValue\": 4226.46566331436,\n          \"minValue\": 9610.95653355545,\n          \"unitCode\": \"wmo:Fx,fiu\",\n          \"qualityControl\": \"Q\"\n        },\n        \"windSpeed\": {\n          \"value\": 9936.181831261021,\n          \"maxValue\": 831.625757291986,\n          \"minValue\": 2708.117857716632,\n          \"unitCode\": \"\\\"O:;HFEyR,\",\n          \"qualityControl\": \"Z\"\n        },\n        \"windGust\": {\n          \"value\": 6611.654180651949,\n          \"maxValue\": 7361.092882245779,\n          \"minValue\": 2085.691714413547,\n          \"unitCode\": \"?zP\",\n          \"qualityControl\": \"V\"\n        },\n        \"barometricPressure\": {\n          \"value\": 6115.602900019207,\n          \"maxValue\": 9054.638890467639,\n          \"minValue\": 2712.5740046378955,\n          \"unitCode\": \"uc:xVx\",\n          \"qualityControl\": \"T\"\n        },\n        \"seaLevelPressure\": {\n          \"value\": 786.5432709308728,\n          \"maxValue\": 9355.751349392414,\n          \"minValue\": 4947.593339346513,\n          \"unitCode\": \"e5_\",\n          \"qualityControl\": \"S\"\n        },\n        \"visibility\": {\n          \"value\": 9783.29421085677,\n          \"maxValue\": 3808.52076974745,\n          \"minValue\": 6626.738953081862,\n          \"unitCode\": \"wUwA\",\n          \"qualityControl\": \"S\"\n        },\n        \"maxTemperatureLast24Hours\": {\n          \"value\": 3319.987895134491,\n          \"maxValue\": 7895.560014590432,\n          \"minValue\": 3865.9470034473034,\n          \"unitCode\": \"wmo:xFf!a\",\n          \"qualityControl\": \"T\"\n        },\n        \"minTemperatureLast24Hours\": {\n          \"value\": 7282.634409372118,\n          \"maxValue\": 7119.659683552064,\n          \"minValue\": 3189.8128259992363,\n          \"unitCode\": \"wmo:L\\\\}_\\\"w\",\n          \"qualityControl\": \"V\"\n        },\n        \"precipitationLastHour\": {\n          \"value\": 3828.58464682982,\n          \"maxValue\": 224.71390471187956,\n          \"minValue\": 6181.883329993565,\n          \"unitCode\": \"uc:MU=T=bWi\",\n          \"qualityControl\": \"Z\"\n        },\n        \"precipitationLast3Hours\": {\n          \"value\": 123.79651883998255,\n          \"maxValue\": 7697.153724977443,\n          \"minValue\": 7612.805971773727,\n          \"unitCode\": \"wmo:\",\n          \"qualityControl\": \"Q\"\n        },\n        \"precipitationLast6Hours\": {\n          \"value\": 2952.2750432002085,\n          \"maxValue\": 2007.921483074292,\n          \"minValue\": 9845.327565138925,\n          \"unitCode\": \"{nl[Y0<+$%\",\n          \"qualityControl\": \"X\"\n        },\n        \"relativeHumidity\": {\n          \"value\": 9352.393199332673,\n          \"maxValue\": 996.089459098437,\n          \"minValue\": 5869.318119664912,\n          \"unitCode\": \"wmoUnit:!jD5\",\n          \"qualityControl\": \"S\"\n        },\n        \"windChill\": {\n          \"value\": 1518.6304205937306,\n          \"maxValue\": 966.2144178990728,\n          \"minValue\": 4096.855739164735,\n          \"unitCode\": \"\",\n          \"qualityControl\": \"T\"\n        },\n        \"heatIndex\": {\n          \"value\": 4224.939343758196,\n          \"maxValue\": 5546.970361863173,\n          \"minValue\": 6797.2511538390645,\n          \"unitCode\": \"nwsUnit:+\\\"R\",\n          \"qualityControl\": \"X\"\n        },\n        \"cloudLayers\": [\n          {\n            \"base\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"maxValue\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"minValue\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"unitCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"qualityControl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"amount\": \"SCT\"\n          },\n          {\n            \"base\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"maxValue\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"minValue\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"unitCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"qualityControl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"amount\": \"CLR\"\n          }\n        ]\n      },\n      \"id\": \"http://uumsxsnkBU.tbNKCwJd33RSv\"\n    }\n  ],\n  \"pagination\": {\n    \"next\": \"https://jdPESaKpEjJpDqH.eoNP8.ntz8PAlcvqswABYjK3pDWdkUT1bKbd.94Ajqyx9yx9UAOng6F.\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "01493deb-b903-4647-a6e2-3aa9fabe9cdb",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stations",
+                    ":stationId",
+                    "observations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "stationId",
+                      "description": "(Required) Observation station ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"urn:noaa:nws:api:UnexpectedProblem\",\n  \"title\": \"Unexpected Problem\",\n  \"status\": 500,\n  \"detail\": \"An unexpected problem has occurred.\",\n  \"instance\": \"urn:noaa:nws:api:request:493c3a1d-f87e-407f-ae2c-24483f5aab63\",\n  \"correlationId\": \"493c3a1d-f87e-407f-ae2c-24483f5aab63\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "74025b35-53e8-4a8f-b30a-364e0da669b7",
+          "name": "station observation latest",
+          "request": {
+            "name": "station observation latest",
+            "description": {
+              "content": "Returns the latest observation for a station",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "stations",
+                ":stationId",
+                "observations",
+                "latest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "require_qc",
+                  "value": "<boolean>",
+                  "description": "Require QC"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "stationId",
+                  "description": "(Required) Observation station ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "89d4c604-5402-4388-8673-94ea6f4e0308",
+              "name": "An observation record.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stations",
+                    ":stationId",
+                    "observations",
+                    "latest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "require_qc",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "stationId",
+                      "description": "(Required) Observation station ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"Feature\",\n  \"geometry\": {\n    \"type\": \"Point\",\n    \"coordinates\": [\n      4802.672588861479,\n      4518.155198093724\n    ],\n    \"bbox\": [\n      1560.9248844233093,\n      4119.554266386403,\n      5261.265852572135,\n      2336.192973315735\n    ]\n  },\n  \"properties\": {\n    \"geometry\": \"string\",\n    \"@id\": \"http://dn.quxHf8wq909nHz3ZWEK6cU-ScHvrweUT5zz-24m50CmlISTxsAlNiAHB\",\n    \"@type\": \"wx:ObservationStation\",\n    \"elevation\": {\n      \"value\": 756.6843249806332,\n      \"maxValue\": 9789.043574153124,\n      \"minValue\": 5256.710057143149,\n      \"unitCode\": \"uc:O??$\",\n      \"qualityControl\": \"Q\"\n    },\n    \"station\": \"https://iqKYOtfYPRWyFEpeltyIeQqmHVuSIvf.zlaO4ZxwbZCyll-fS0QzazHxQoQeSmJOt3P\",\n    \"stationId\": \"string\",\n    \"stationName\": \"string\",\n    \"timestamp\": \"1961-03-17T05:31:44.911Z\",\n    \"rawMessage\": \"string\",\n    \"textDescription\": \"string\",\n    \"icon\": \"http://IwxzHUBJOqOLhd.ddgHIhGaT1gIxKOFI0xoYg3AE6k-\",\n    \"presentWeather\": [\n      {\n        \"intensity\": \"light\",\n        \"modifier\": \"freezing\",\n        \"weather\": \"snow_grains\",\n        \"rawString\": \"string\",\n        \"inVicinity\": true\n      },\n      {\n        \"intensity\": \"light\",\n        \"modifier\": \"patches\",\n        \"weather\": \"thunderstorms\",\n        \"rawString\": \"string\",\n        \"inVicinity\": false\n      }\n    ],\n    \"temperature\": {\n      \"value\": 58.200461039474845,\n      \"maxValue\": 1212.350320187743,\n      \"minValue\": 8591.047816722083,\n      \"unitCode\": \"+\",\n      \"qualityControl\": \"Z\"\n    },\n    \"dewpoint\": {\n      \"value\": 3299.266491145203,\n      \"maxValue\": 2715.804678277336,\n      \"minValue\": 3834.7954541247955,\n      \"unitCode\": \"uc:\",\n      \"qualityControl\": \"Q\"\n    },\n    \"windDirection\": {\n      \"value\": 5483.624058507208,\n      \"maxValue\": 9789.37588952871,\n      \"minValue\": 4384.691940919794,\n      \"unitCode\": \"H\",\n      \"qualityControl\": \"B\"\n    },\n    \"windSpeed\": {\n      \"value\": 2335.921032914131,\n      \"maxValue\": 1771.7334632032089,\n      \"minValue\": 8975.924943750544,\n      \"unitCode\": \"uc:2<F</]lu$(\",\n      \"qualityControl\": \"Q\"\n    },\n    \"windGust\": {\n      \"value\": 7817.76907906001,\n      \"maxValue\": 9968.158276679133,\n      \"minValue\": 8078.483819434271,\n      \"unitCode\": \"wmoUnit:o0:i?k \",\n      \"qualityControl\": \"X\"\n    },\n    \"barometricPressure\": {\n      \"value\": 3802.626988077381,\n      \"maxValue\": 8152.992200216817,\n      \"minValue\": 3240.810095572394,\n      \"unitCode\": \"&}\",\n      \"qualityControl\": \"Q\"\n    },\n    \"seaLevelPressure\": {\n      \"value\": 9426.588764819784,\n      \"maxValue\": 4423.276940335449,\n      \"minValue\": 25.747388709873587,\n      \"unitCode\": \"yd^@L NC60\",\n      \"qualityControl\": \"C\"\n    },\n    \"visibility\": {\n      \"value\": 5157.805483435248,\n      \"maxValue\": 7859.853885564448,\n      \"minValue\": 2047.4331323953609,\n      \"unitCode\": \"wmo:tY\",\n      \"qualityControl\": \"Q\"\n    },\n    \"maxTemperatureLast24Hours\": {\n      \"value\": 2722.729804054279,\n      \"maxValue\": 6791.0015365561685,\n      \"minValue\": 354.72813024325256,\n      \"unitCode\": \"\\\".j\",\n      \"qualityControl\": \"G\"\n    },\n    \"minTemperatureLast24Hours\": {\n      \"value\": 9914.401901971052,\n      \"maxValue\": 7901.821590172614,\n      \"minValue\": 8658.864683329946,\n      \"unitCode\": \"C$M\",\n      \"qualityControl\": \"Q\"\n    },\n    \"precipitationLastHour\": {\n      \"value\": 2730.570048329749,\n      \"maxValue\": 494.53933812340534,\n      \"minValue\": 5410.423381342317,\n      \"unitCode\": \"1\",\n      \"qualityControl\": \"V\"\n    },\n    \"precipitationLast3Hours\": {\n      \"value\": 1557.7166726651626,\n      \"maxValue\": 8980.888854963287,\n      \"minValue\": 9799.790746346851,\n      \"unitCode\": \"wmo:*(E8M*\\\"=h\",\n      \"qualityControl\": \"V\"\n    },\n    \"precipitationLast6Hours\": {\n      \"value\": 5411.931293962972,\n      \"maxValue\": 1538.2094077774743,\n      \"minValue\": 7843.4255950242705,\n      \"unitCode\": \"'7U'_\",\n      \"qualityControl\": \"Z\"\n    },\n    \"relativeHumidity\": {\n      \"value\": 4058.132689682167,\n      \"maxValue\": 2908.970560162969,\n      \"minValue\": 5550.594792599939,\n      \"unitCode\": \"uc:4j>b\",\n      \"qualityControl\": \"G\"\n    },\n    \"windChill\": {\n      \"value\": 9782.195049467187,\n      \"maxValue\": 306.9519265955545,\n      \"minValue\": 7955.54993102988,\n      \"unitCode\": \"[?\",\n      \"qualityControl\": \"B\"\n    },\n    \"heatIndex\": {\n      \"value\": 7947.0865861453,\n      \"maxValue\": 7366.592562302892,\n      \"minValue\": 3899.636606274416,\n      \"unitCode\": \"wmo:2.\",\n      \"qualityControl\": \"X\"\n    },\n    \"cloudLayers\": [\n      {\n        \"base\": {\n          \"value\": 9448.200027311097,\n          \"maxValue\": 7413.43426843356,\n          \"minValue\": 5305.5423616806565,\n          \"unitCode\": \"MP8*\",\n          \"qualityControl\": \"C\"\n        },\n        \"amount\": \"SCT\"\n      },\n      {\n        \"base\": {\n          \"value\": 7545.245196016739,\n          \"maxValue\": 9919.483862213121,\n          \"minValue\": 6735.566885105603,\n          \"unitCode\": \"wmo:fF\",\n          \"qualityControl\": \"X\"\n        },\n        \"amount\": \"FEW\"\n      }\n    ]\n  },\n  \"id\": \"http://mqONNepoyQvxiagXeUPauoqLolw.khlosrB2N.e14zY0YaOngFTKBuk0RsMQ41Tg6G.4yp29bc1D6x+8K8lzD3UWAWltHZfFmWOS\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cae8b651-1d57-48da-b7c3-6c6789902bbe",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stations",
+                    ":stationId",
+                    "observations",
+                    "latest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "require_qc",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "stationId",
+                      "description": "(Required) Observation station ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"urn:noaa:nws:api:UnexpectedProblem\",\n  \"title\": \"Unexpected Problem\",\n  \"status\": 500,\n  \"detail\": \"An unexpected problem has occurred.\",\n  \"instance\": \"urn:noaa:nws:api:request:493c3a1d-f87e-407f-ae2c-24483f5aab63\",\n  \"correlationId\": \"493c3a1d-f87e-407f-ae2c-24483f5aab63\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "08ab2439-b7c7-4481-b9ac-344cd0ea00a7",
+          "name": "station observation time",
+          "request": {
+            "name": "station observation time",
+            "description": {
+              "content": "Returns a single observation.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "stations",
+                ":stationId",
+                "observations",
+                ":time"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<dateTime>",
+                  "key": "time",
+                  "description": "(Required) Timestamp of requested observation"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "stationId",
+                  "description": "(Required) Observation station ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "67f5a93b-1064-4718-8ee1-450840ddc797",
+              "name": "An observation record.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stations",
+                    ":stationId",
+                    "observations",
+                    ":time"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<dateTime>",
+                      "key": "time",
+                      "description": "(Required) Timestamp of requested observation"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "stationId",
+                      "description": "(Required) Observation station ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"Feature\",\n  \"geometry\": {\n    \"type\": \"Point\",\n    \"coordinates\": [\n      4802.672588861479,\n      4518.155198093724\n    ],\n    \"bbox\": [\n      1560.9248844233093,\n      4119.554266386403,\n      5261.265852572135,\n      2336.192973315735\n    ]\n  },\n  \"properties\": {\n    \"geometry\": \"string\",\n    \"@id\": \"http://dn.quxHf8wq909nHz3ZWEK6cU-ScHvrweUT5zz-24m50CmlISTxsAlNiAHB\",\n    \"@type\": \"wx:ObservationStation\",\n    \"elevation\": {\n      \"value\": 756.6843249806332,\n      \"maxValue\": 9789.043574153124,\n      \"minValue\": 5256.710057143149,\n      \"unitCode\": \"uc:O??$\",\n      \"qualityControl\": \"Q\"\n    },\n    \"station\": \"https://iqKYOtfYPRWyFEpeltyIeQqmHVuSIvf.zlaO4ZxwbZCyll-fS0QzazHxQoQeSmJOt3P\",\n    \"stationId\": \"string\",\n    \"stationName\": \"string\",\n    \"timestamp\": \"1961-03-17T05:31:44.911Z\",\n    \"rawMessage\": \"string\",\n    \"textDescription\": \"string\",\n    \"icon\": \"http://IwxzHUBJOqOLhd.ddgHIhGaT1gIxKOFI0xoYg3AE6k-\",\n    \"presentWeather\": [\n      {\n        \"intensity\": \"light\",\n        \"modifier\": \"freezing\",\n        \"weather\": \"snow_grains\",\n        \"rawString\": \"string\",\n        \"inVicinity\": true\n      },\n      {\n        \"intensity\": \"light\",\n        \"modifier\": \"patches\",\n        \"weather\": \"thunderstorms\",\n        \"rawString\": \"string\",\n        \"inVicinity\": false\n      }\n    ],\n    \"temperature\": {\n      \"value\": 58.200461039474845,\n      \"maxValue\": 1212.350320187743,\n      \"minValue\": 8591.047816722083,\n      \"unitCode\": \"+\",\n      \"qualityControl\": \"Z\"\n    },\n    \"dewpoint\": {\n      \"value\": 3299.266491145203,\n      \"maxValue\": 2715.804678277336,\n      \"minValue\": 3834.7954541247955,\n      \"unitCode\": \"uc:\",\n      \"qualityControl\": \"Q\"\n    },\n    \"windDirection\": {\n      \"value\": 5483.624058507208,\n      \"maxValue\": 9789.37588952871,\n      \"minValue\": 4384.691940919794,\n      \"unitCode\": \"H\",\n      \"qualityControl\": \"B\"\n    },\n    \"windSpeed\": {\n      \"value\": 2335.921032914131,\n      \"maxValue\": 1771.7334632032089,\n      \"minValue\": 8975.924943750544,\n      \"unitCode\": \"uc:2<F</]lu$(\",\n      \"qualityControl\": \"Q\"\n    },\n    \"windGust\": {\n      \"value\": 7817.76907906001,\n      \"maxValue\": 9968.158276679133,\n      \"minValue\": 8078.483819434271,\n      \"unitCode\": \"wmoUnit:o0:i?k \",\n      \"qualityControl\": \"X\"\n    },\n    \"barometricPressure\": {\n      \"value\": 3802.626988077381,\n      \"maxValue\": 8152.992200216817,\n      \"minValue\": 3240.810095572394,\n      \"unitCode\": \"&}\",\n      \"qualityControl\": \"Q\"\n    },\n    \"seaLevelPressure\": {\n      \"value\": 9426.588764819784,\n      \"maxValue\": 4423.276940335449,\n      \"minValue\": 25.747388709873587,\n      \"unitCode\": \"yd^@L NC60\",\n      \"qualityControl\": \"C\"\n    },\n    \"visibility\": {\n      \"value\": 5157.805483435248,\n      \"maxValue\": 7859.853885564448,\n      \"minValue\": 2047.4331323953609,\n      \"unitCode\": \"wmo:tY\",\n      \"qualityControl\": \"Q\"\n    },\n    \"maxTemperatureLast24Hours\": {\n      \"value\": 2722.729804054279,\n      \"maxValue\": 6791.0015365561685,\n      \"minValue\": 354.72813024325256,\n      \"unitCode\": \"\\\".j\",\n      \"qualityControl\": \"G\"\n    },\n    \"minTemperatureLast24Hours\": {\n      \"value\": 9914.401901971052,\n      \"maxValue\": 7901.821590172614,\n      \"minValue\": 8658.864683329946,\n      \"unitCode\": \"C$M\",\n      \"qualityControl\": \"Q\"\n    },\n    \"precipitationLastHour\": {\n      \"value\": 2730.570048329749,\n      \"maxValue\": 494.53933812340534,\n      \"minValue\": 5410.423381342317,\n      \"unitCode\": \"1\",\n      \"qualityControl\": \"V\"\n    },\n    \"precipitationLast3Hours\": {\n      \"value\": 1557.7166726651626,\n      \"maxValue\": 8980.888854963287,\n      \"minValue\": 9799.790746346851,\n      \"unitCode\": \"wmo:*(E8M*\\\"=h\",\n      \"qualityControl\": \"V\"\n    },\n    \"precipitationLast6Hours\": {\n      \"value\": 5411.931293962972,\n      \"maxValue\": 1538.2094077774743,\n      \"minValue\": 7843.4255950242705,\n      \"unitCode\": \"'7U'_\",\n      \"qualityControl\": \"Z\"\n    },\n    \"relativeHumidity\": {\n      \"value\": 4058.132689682167,\n      \"maxValue\": 2908.970560162969,\n      \"minValue\": 5550.594792599939,\n      \"unitCode\": \"uc:4j>b\",\n      \"qualityControl\": \"G\"\n    },\n    \"windChill\": {\n      \"value\": 9782.195049467187,\n      \"maxValue\": 306.9519265955545,\n      \"minValue\": 7955.54993102988,\n      \"unitCode\": \"[?\",\n      \"qualityControl\": \"B\"\n    },\n    \"heatIndex\": {\n      \"value\": 7947.0865861453,\n      \"maxValue\": 7366.592562302892,\n      \"minValue\": 3899.636606274416,\n      \"unitCode\": \"wmo:2.\",\n      \"qualityControl\": \"X\"\n    },\n    \"cloudLayers\": [\n      {\n        \"base\": {\n          \"value\": 9448.200027311097,\n          \"maxValue\": 7413.43426843356,\n          \"minValue\": 5305.5423616806565,\n          \"unitCode\": \"MP8*\",\n          \"qualityControl\": \"C\"\n        },\n        \"amount\": \"SCT\"\n      },\n      {\n        \"base\": {\n          \"value\": 7545.245196016739,\n          \"maxValue\": 9919.483862213121,\n          \"minValue\": 6735.566885105603,\n          \"unitCode\": \"wmo:fF\",\n          \"qualityControl\": \"X\"\n        },\n        \"amount\": \"FEW\"\n      }\n    ]\n  },\n  \"id\": \"http://mqONNepoyQvxiagXeUPauoqLolw.khlosrB2N.e14zY0YaOngFTKBuk0RsMQ41Tg6G.4yp29bc1D6x+8K8lzD3UWAWltHZfFmWOS\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0bfa2635-65b2-4a77-8d8f-56dd0ca72462",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stations",
+                    ":stationId",
+                    "observations",
+                    ":time"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<dateTime>",
+                      "key": "time",
+                      "description": "(Required) Timestamp of requested observation"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "stationId",
+                      "description": "(Required) Observation station ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"urn:noaa:nws:api:UnexpectedProblem\",\n  \"title\": \"Unexpected Problem\",\n  \"status\": 500,\n  \"detail\": \"An unexpected problem has occurred.\",\n  \"instance\": \"urn:noaa:nws:api:request:493c3a1d-f87e-407f-ae2c-24483f5aab63\",\n  \"correlationId\": \"493c3a1d-f87e-407f-ae2c-24483f5aab63\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "092b0215-3275-4c43-a9d8-abcd755ff2bd",
+          "name": "tafs",
+          "request": {
+            "name": "tafs",
+            "description": {
+              "content": "Returns Terminal Aerodrome Forecasts for the specified airport station.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "stations",
+                ":stationId",
+                "tafs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "stationId",
+                  "description": "(Required) Observation station ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/ld+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "28cc9d10-29a8-4736-95ab-cf07a389d4ff",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stations",
+                    ":stationId",
+                    "tafs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "stationId",
+                      "description": "(Required) Observation station ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/ld+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/ld+json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3b0230aa-c2b4-4bc6-a2eb-35091f0dc4a0",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stations",
+                    ":stationId",
+                    "tafs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "stationId",
+                      "description": "(Required) Observation station ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"urn:noaa:nws:api:UnexpectedProblem\",\n  \"title\": \"Unexpected Problem\",\n  \"status\": 500,\n  \"detail\": \"An unexpected problem has occurred.\",\n  \"instance\": \"urn:noaa:nws:api:request:493c3a1d-f87e-407f-ae2c-24483f5aab63\",\n  \"correlationId\": \"493c3a1d-f87e-407f-ae2c-24483f5aab63\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "324ddc19-e001-4b91-982b-48294a712932",
+          "name": "taf",
+          "request": {
+            "name": "taf",
+            "description": {
+              "content": "Returns a single Terminal Aerodrome Forecast.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "stations",
+                ":stationId",
+                "tafs",
+                ":date",
+                ":time"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "stationId",
+                  "description": "(Required) Observation station ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<date>",
+                  "key": "date",
+                  "description": "(Required) Date (YYYY-MM-DD format)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "time",
+                  "description": "(Required) Time (HHMM format). This time is always specified in UTC (Zulu) time."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.wmo.iwxxm+xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "57c5593e-96fa-449c-b25c-72a3bfa86d0d",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stations",
+                    ":stationId",
+                    "tafs",
+                    ":date",
+                    ":time"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "stationId",
+                      "description": "(Required) Observation station ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<date>",
+                      "key": "date",
+                      "description": "(Required) Date (YYYY-MM-DD format)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "time",
+                      "description": "(Required) Time (HHMM format). This time is always specified in UTC (Zulu) time."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.wmo.iwxxm+xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.wmo.iwxxm+xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "574c58d8-e3ec-4c9a-a282-3137837be69e",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stations",
+                    ":stationId",
+                    "tafs",
+                    ":date",
+                    ":time"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "stationId",
+                      "description": "(Required) Observation station ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<date>",
+                      "key": "date",
+                      "description": "(Required) Date (YYYY-MM-DD format)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "time",
+                      "description": "(Required) Time (HHMM format). This time is always specified in UTC (Zulu) time."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"urn:noaa:nws:api:UnexpectedProblem\",\n  \"title\": \"Unexpected Problem\",\n  \"status\": 500,\n  \"detail\": \"An unexpected problem has occurred.\",\n  \"instance\": \"urn:noaa:nws:api:request:493c3a1d-f87e-407f-ae2c-24483f5aab63\",\n  \"correlationId\": \"493c3a1d-f87e-407f-ae2c-24483f5aab63\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b4b26080-4029-4932-83ea-6b179cb7a956",
+          "name": "obs stations",
+          "request": {
+            "name": "obs stations",
+            "description": {
+              "content": "Returns a list of observation stations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "stations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>,<string>",
+                  "description": "Filter by observation station ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>,<string>",
+                  "description": "Filter by state/marine area code"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "500",
+                  "description": "Limit"
+                },
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "Pagination cursor"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f72d9f66-231a-4eea-be15-7031b1d1bd32",
+              "name": "A collection of observation stations.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "OR,NV"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "500"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"FeatureCollection\",\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"geometry\": \"string\",\n        \"@id\": \"http://ocGVCtoRaQVlqKJYQhi.hbicP897+u+Xg9ky7qRocKmY2A9EcdX7.FHo\",\n        \"@type\": \"wx:ObservationStation\",\n        \"elevation\": {\n          \"value\": 2534.561781977304,\n          \"maxValue\": 4618.44538476916,\n          \"minValue\": 5580.039291432293,\n          \"unitCode\": \"uc:e11%5SQJmt\",\n          \"qualityControl\": \"T\"\n        },\n        \"stationIdentifier\": \"string\",\n        \"name\": \"string\",\n        \"timeZone\": \"string\",\n        \"provider\": \"string\",\n        \"subProvider\": \"string\",\n        \"forecast\": \"https://bNmI.fwydI+0lW.tE2GGUuKmgOa9QLe.dX4tUuV4n3ywDCHm4SA7OKgtcMVcasb4rMaWAytdOZP\",\n        \"county\": \"https://zNaZSVuTGRZYyWjvTQuQMAkWlLie.gisHD1UYt6b1mjc\",\n        \"fireWeatherZone\": \"http://MJc.ljrvlAKXJFxd.hjIbinBqaCHG+m2\",\n        \"distance\": {\n          \"value\": 4947.215025363977,\n          \"maxValue\": 6431.694864523333,\n          \"minValue\": 8753.426661645317,\n          \"unitCode\": \"nwsUnit:\\\"h{A@#O(/\",\n          \"qualityControl\": \"T\"\n        },\n        \"bearing\": {\n          \"value\": 1203.9408227773586,\n          \"maxValue\": 3548.7041382064413,\n          \"minValue\": 7647.0493258992055,\n          \"unitCode\": \";~XtL, '<p\",\n          \"qualityControl\": \"T\"\n        }\n      },\n      \"id\": \"http://IMPpXRjWDklZzfoIHcZxnjOBjU.xyykHk3a-qqYDNiewuGZqpbST6W\"\n    },\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"geometry\": \"string\",\n        \"@id\": \"http://vFHTiMPPGTzeeLILqB.bxsXQMeoVMcPbc8kT+3F.m12gJsd.02A8N7rf4JcMx5IkuA\",\n        \"@type\": \"wx:ObservationStation\",\n        \"elevation\": {\n          \"value\": 7979.769386365122,\n          \"maxValue\": 7346.324435486269,\n          \"minValue\": 9478.753749666172,\n          \"unitCode\": \"wmo:OAt_\",\n          \"qualityControl\": \"Q\"\n        },\n        \"stationIdentifier\": \"string\",\n        \"name\": \"string\",\n        \"timeZone\": \"string\",\n        \"provider\": \"string\",\n        \"subProvider\": \"string\",\n        \"forecast\": \"https://zzogaQWPDePC.zifwaCJtShmTxPmfBYwWMF340dICaOu6xP-+SIQMdWgwSPQCfDDKkzFITW2n+dMHMe+\",\n        \"county\": \"https://YpbKtpg.dojCkfgBp+TtBhAMwZ,Mg9-Uz6maUI.ebbGIbm.O6vXt3Bnuy\",\n        \"fireWeatherZone\": \"https://GWKbvTptnoaBsvnIprCdQwUGZrsMmJj.zxbj,QzAw7gxjCGSNZbCcmb3sQHLY5,+je5\",\n        \"distance\": {\n          \"value\": 567.8596788649903,\n          \"maxValue\": 6694.286092846846,\n          \"minValue\": 5460.753330591617,\n          \"unitCode\": \"SRJt\\\"C5\",\n          \"qualityControl\": \"X\"\n        },\n        \"bearing\": {\n          \"value\": 6570.952937655148,\n          \"maxValue\": 8105.091630415406,\n          \"minValue\": 1131.3756215630222,\n          \"unitCode\": \"Fj=3`?a\",\n          \"qualityControl\": \"Q\"\n        }\n      },\n      \"id\": \"https://HnRWeUsEVADuZVxywoWJeRhksBM.recgqRYTW-QWAzoy0CnNFDkY,WN5HQfFngwpCKjgI64FX7x1NWjfLnw0Z8BQ9IDOFHip\"\n    }\n  ],\n  \"observationStations\": [\n    \"http://cekvhvylIKgLULTsNQ.omqfwFDe.CCuh3WE\",\n    \"https://nnQdIUMdpYJBexkYNKdBrJE.syjjk6ckdxFixXctFo0EgSq5f\"\n  ],\n  \"pagination\": {\n    \"next\": \"https://EVNVzilvXgKwvqqRHVMCaw.hkTSRsS3nlrpxxCB72yiLMtvIpQT8pEUzoBmPRkIIXW5PG0vp7-\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "80f9207e-35d9-44c1-b746-07167df0e0ab",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "OR,NV"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "500"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"urn:noaa:nws:api:UnexpectedProblem\",\n  \"title\": \"Unexpected Problem\",\n  \"status\": 500,\n  \"detail\": \"An unexpected problem has occurred.\",\n  \"instance\": \"urn:noaa:nws:api:request:493c3a1d-f87e-407f-ae2c-24483f5aab63\",\n  \"correlationId\": \"493c3a1d-f87e-407f-ae2c-24483f5aab63\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5e29d7f5-7e03-400f-956f-cd2b93b062f0",
+          "name": "obs station",
+          "request": {
+            "name": "obs station",
+            "description": {
+              "content": "Returns metadata about a given observation station",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "stations",
+                ":stationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "stationId",
+                  "description": "(Required) Observation station ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4153ed94-cdb1-418f-bcac-897fb0dc8659",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stations",
+                    ":stationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "stationId",
+                      "description": "(Required) Observation station ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"Feature\",\n  \"geometry\": {\n    \"type\": \"Point\",\n    \"coordinates\": [\n      5509.715287984899,\n      2025.8539199750526\n    ],\n    \"bbox\": [\n      3068.9954377801887,\n      8302.234351945763,\n      4675.583012969573,\n      8698.271567168826\n    ]\n  },\n  \"properties\": {\n    \"geometry\": \"string\",\n    \"@id\": \"http://KbehnluZoESBiaThaUW.vhvnbgnHGexbfD4l+WvSZrL79lv8tC6fWExi,YmL-z10Su0bbtQC5OINdDsJm\",\n    \"@type\": \"wx:ObservationStation\",\n    \"elevation\": {\n      \"value\": 2012.404498886402,\n      \"maxValue\": 4810.243506593365,\n      \"minValue\": 7491.6531281066955,\n      \"unitCode\": \"LUXvdg`\",\n      \"qualityControl\": \"X\"\n    },\n    \"stationIdentifier\": \"string\",\n    \"name\": \"string\",\n    \"timeZone\": \"string\",\n    \"provider\": \"string\",\n    \"subProvider\": \"string\",\n    \"forecast\": \"https://IfRTASDGtWKWnMBCrFZSUcOz.bsk1MaUJgcrEw-nY-f.wWkrEAqVpRd8StRy.vIABgk6iE\",\n    \"county\": \"https://UDVCQtoUIhwOnIOLSPQQjUylbVnx.artoXAUXh8ikGj\",\n    \"fireWeatherZone\": \"https://tLlHMuNLQhvkkhHyRxexzaSkES.pwvuFmcg5pUOVXMATA3-6\",\n    \"distance\": {\n      \"value\": 5247.410494504829,\n      \"maxValue\": 363.4556001157718,\n      \"minValue\": 7310.685815052536,\n      \"unitCode\": \"uc:Q^' n[Vg\",\n      \"qualityControl\": \"V\"\n    },\n    \"bearing\": {\n      \"value\": 5047.800896703177,\n      \"maxValue\": 9641.80347737697,\n      \"minValue\": 764.5260431617229,\n      \"unitCode\": \"x(\",\n      \"qualityControl\": \"T\"\n    }\n  },\n  \"id\": \"http://PhUi.rllLpWB+gz,gxYi8ZUiQnog\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "340f3187-70a9-492c-843b-64bd32f157d6",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stations",
+                    ":stationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "stationId",
+                      "description": "(Required) Observation station ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "User-Agent",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"urn:noaa:nws:api:UnexpectedProblem\",\n  \"title\": \"Unexpected Problem\",\n  \"status\": 500,\n  \"detail\": \"An unexpected problem has occurred.\",\n  \"instance\": \"urn:noaa:nws:api:request:493c3a1d-f87e-407f-ae2c-24483f5aab63\",\n  \"correlationId\": \"493c3a1d-f87e-407f-ae2c-24483f5aab63\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.weather.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "User-Agent"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "42a42910-6070-47a6-a266-42c159245791",
+    "name": "weather.gov Alerts Stations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "weather.gov API",
+      "type": "text/plain"
+    }
+  }
+}
