@@ -24,6 +24,10 @@ created: '2024-01-01'
 modified: '2026-05-19'
 specificationVersion: '0.23'
 tags:
+  - Federal-Government
+  - Forecasting
+  - Weather
+tags_raw:
   - Federal Government
   - Forecasting
   - Weather
@@ -118,6 +122,8 @@ apis:
   humanURL: https://www.weather.gov/documentation/services-web-api
   baseURL: https://api.weather.gov/
   tags:
+  - Product
+  tags_raw:
   - Products
   properties:
   - type: OpenAPI
