@@ -33,7 +33,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/national-weather-service.png
 url: https://raw.githubusercontent.com/api-evangelist/national-weather-service/refs/heads/main/apis.yml
 created: '2024-01-01'
-modified: '2026-05-19'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 tags:
   - Federal Government
@@ -204,6 +204,8 @@ apis:
   - type: Documentation
     url: https://www.weather.gov/documentation/services-web-api
 common:
+  - url: https://www.weather.gov/news
+    type: Blog
   - type: AgenticAccess
     url: agentic-access/national-weather-service-agentic-access.yml
   - type: DomainSecurity
